@@ -1,0 +1,75 @@
+services:
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_BASE_URL}
+      - NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${CLERK_PUBLISHABLE_KEY}
+      - CLERK_SECRET_KEY=${CLERK_SECRET_KEY}
+
+    depends_on:
+      - server
+    volumes:
+      - ./client:/app:cached
+      - client_node_modules:/app/node_modules
+      - client_next:/app/.next
+    networks:
+      - app-network
+
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    ports:
+      - "8002:8002"
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - DYNAMODB_LOCAL_URL=${DYNAMODB_LOCAL_URL}
+      - CLERK_SECRET_KEY=${CLERK_SECRET_KEY}
+      - CLERK_PUBLISHABLE_KEY=${CLERK_PUBLISHABLE_KEY}
+      - NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${CLERK_PUBLISHABLE_KEY}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_REGION=${AWS_REGION}
+    volumes:
+      - ./server:/app:cached
+      - server_node_modules:/app/node_modules
+    networks:
+      - app-network
+
+  dynamodb-local:
+    image: "amazon/dynamodb-local:latest"
+    container_name: dynamodb-local
+    command: "-jar DynamoDBLocal.jar -sharedDb -dbPath /home/dynamodblocal/data"
+    ports:
+      - "8000:8000"
+    volumes:
+      - "./docker/dynamodb:/home/dynamodblocal/data"
+    working_dir: /home/dynamodblocal
+    networks:
+      - app-network
+
+  dynamodb-admin:
+    image: aaronshaf/dynamodb-admin
+    container_name: dynamodb-admin
+    ports:
+      - "8001:8001"
+    environment:
+      - DYNAMO_ENDPOINT=http://dynamodb-local:8000
+      - AWS_REGION=us-east-1
+    depends_on:
+      - dynamodb-local
+    networks:
+      - app-network
+
+volumes:
+  client_node_modules:
+  client_next:
+  server_node_modules:
+
+networks:
+  app-network:
