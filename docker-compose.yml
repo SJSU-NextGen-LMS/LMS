@@ -7,7 +7,7 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=${NODE_ENV}
-      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_BASE_URL}
+      - NEXT_PUBLIC_API_BASE_URL=${NEXT_PUBLIC_API_BASE_URL}
       - NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=${CLERK_PUBLISHABLE_KEY}
       - CLERK_SECRET_KEY=${CLERK_SECRET_KEY}
 
@@ -27,6 +27,7 @@ services:
     ports:
       - "8002:8002"
     environment:
+      - PORT=${PORT}
       - NODE_ENV=${NODE_ENV}
       - DYNAMODB_LOCAL_URL=${DYNAMODB_LOCAL_URL}
       - CLERK_SECRET_KEY=${CLERK_SECRET_KEY}

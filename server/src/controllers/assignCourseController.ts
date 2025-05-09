@@ -7,7 +7,7 @@ import { getAuth } from "@clerk/express";
 
 dotenv.config();
 
-/*
+
 export const listAssignCourses = async (
   req: Request,
   res: Response
@@ -27,7 +27,7 @@ export const listAssignCourses = async (
     res.status(500).json({ message: "Error retrieving assignment", error });
   }
 };
-*/
+
 
 export const getUserAssignCourses = async (
   req: Request,
