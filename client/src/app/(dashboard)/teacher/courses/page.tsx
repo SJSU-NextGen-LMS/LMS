@@ -15,7 +15,7 @@ import { useFilteredCourses } from "@/hooks/userFilteredCourses";
 import {
   useCreateCourseMutation,
   useDeleteCourseMutation,
-  useGetCoursesQuery,
+  useGetTeacherCoursesQuery,
 } from "@/state/api";
 
 // Types
@@ -36,7 +36,13 @@ const TeacherCourses = () => {
 
   const [createCourse] = useCreateCourseMutation();
   const [deleteCourse] = useDeleteCourseMutation();
-  const { data: courses, isLoading, isError } = useGetCoursesQuery({ category: "all" });
+  const {
+    data: courses,
+    isLoading,
+    isError,
+  } = useGetTeacherCoursesQuery(user?.id ?? "", {
+    skip: !isLoaded || !user,
+  });
 
   /**
    * Filter courses based on search term and selected category
@@ -90,6 +96,8 @@ const TeacherCourses = () => {
   // Loading state
  // Prevent rendering until Clerk has loaded
  if (!isLoaded) return <Loading />;
+
+ if (isLoading) return <Loading />;
  if (!user) {
    router.push("/sign-in");
    return null;

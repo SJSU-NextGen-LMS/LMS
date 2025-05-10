@@ -14,8 +14,13 @@ export const listCourses = async (
   try {
     const courses =
       category && category !== "all"
-        ? await Course.scan("category").eq(category).exec()
-        : await Course.scan().exec();
+        ? await Course.scan()
+        .where("category").eq(category)
+        .where("status").eq("Published")
+        .exec()
+      : await Course.scan()
+        .where("status").eq("Published")
+        .exec();
     res.json({ message: "Courses retrieved successfully", data: courses });
   } catch (error) {
     res.status(500).json({ message: "Error retrieving courses", error });
@@ -34,6 +39,41 @@ export const getCourse = async (req: Request, res: Response): Promise<void> => {
     res.json({ message: "Course retrieved successfully", data: course });
   } catch (error) {
     res.status(500).json({ message: "Error retrieving course", error });
+  }
+};
+export const getTeacherCourses = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  const { userId } = req.params;
+  const auth = getAuth(req);
+
+  if (!auth || auth.userId !== userId) {
+    res.status(403).json({ message: "Access denied" });
+    console.log("auth", auth.userId)
+    console.log("userId", userId)
+    return;
+  }
+
+  try {
+    const teacherCourses = await Course.scan("teacherId")
+      .eq(userId)
+      .exec();
+    console.log("teacherCourses", teacherCourses)
+    const courseIds = teacherCourses.map((item: any) => item.courseId);
+    console.log("courseIds", courseIds)
+    let courses: any[] = [];
+    if (courseIds.length > 0) {
+      courses = await Course.batchGet(courseIds);
+    }
+    res.json({
+      message: "Own courses retrieved successfully",
+      data: courses,
+    });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: "Error teacher courses", error });
   }
 };
 

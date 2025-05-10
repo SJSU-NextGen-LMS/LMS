@@ -102,6 +102,11 @@ export const api = createApi({
       providesTags: (result, error, id) => [{ type: "Courses", id }],
     }),
 
+    getTeacherCourses: build.query<Course[], string>({
+      query: (userId) => `courses/teacher-courses/${userId}`,
+      providesTags: ["Courses"],
+    }),
+
     createCourse: build.mutation<
       Course,
       { teacherId: string; teacherName: string }
@@ -195,6 +200,7 @@ export const api = createApi({
     USER COURSE PROGRESS
     =============== 
     */
+
     getUserEnrolledCourses: build.query<Course[], string>({
       query: (userId) => `users/course-progress/${userId}/enrolled-courses`,
       providesTags: ["Courses", "UserCourseProgress", "UserEnrolledCourses"],
@@ -267,4 +273,5 @@ export const {
   useGetUsersQuery,
   useCreateAssignCourseMutation,
   useGetAssignCoursesQuery,
+  useGetTeacherCoursesQuery,
 } = api;
