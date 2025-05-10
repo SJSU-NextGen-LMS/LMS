@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { SignedIn, SignedOut, UserButton, useUser } from "@clerk/nextjs";
+import { SignedIn, SignedOut, useUser } from "@clerk/nextjs";
 import { useEffect } from 'react';
 
 
@@ -16,7 +16,7 @@ const Landing = () => {
     if (user) {
       router.push("/user/courses");
     }
-  }, [user]);
+  }, [user, router]);
 
 
   return (

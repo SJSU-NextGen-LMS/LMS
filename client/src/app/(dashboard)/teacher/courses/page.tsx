@@ -16,15 +16,11 @@ import React, { useMemo, useState } from "react";
 
 const Courses = () => {
   const router = useRouter();
-  const { user } = useUser();
-  const {
-    data: courses,
-    isLoading,
-    isError,
-  } = useGetCoursesQuery({ category: "all" });
+  const { user, isLoaded } = useUser();
 
   const [createCourse] = useCreateCourseMutation();
   const [deleteCourse] = useDeleteCourseMutation();
+  const { data: courses, isLoading, isError } = useGetCoursesQuery({ category: "all" });
 
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -41,6 +37,13 @@ const Courses = () => {
       return matchesSearch && matchesCategory;
     });
   }, [courses, searchTerm, selectedCategory]);
+
+  // Prevent rendering until Clerk has loaded
+  if (!isLoaded) return <Loading />;
+  if (!user) {
+    router.push("/sign-in");
+    return null;
+  }
 
   const handleEdit = (course: Course) => {
     router.push(`/teacher/courses/${course.courseId}`, {
