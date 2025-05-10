@@ -4,10 +4,12 @@ const assignCourseSchema = new Schema(
   {
     courseId: {
       type: String,
+      rangeKey: true,
       required: true
     },
     userId: {
       type: String,
+      hashKey: true,
       required: true
     },
     note: {

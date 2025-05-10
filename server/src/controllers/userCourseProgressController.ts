@@ -22,7 +22,10 @@ export const getUserEnrolledCourses = async (
       .eq(userId)
       .exec();
     const courseIds = enrolledCourses.map((item: any) => item.courseId);
-    const courses = await Course.batchGet(courseIds);
+    let courses: any[] = [];
+    if (courseIds.length > 0) {
+      courses = await Course.batchGet(courseIds);
+    }
     res.json({
       message: "Enrolled courses retrieved successfully",
       data: courses,

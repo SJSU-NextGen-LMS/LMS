@@ -15,7 +15,7 @@ export const listAssignCourses = async (
   const { userId } = req.query;
 
   try {
-    const assignCourse = userId
+    const assignCourse = userId && userId !== "all"
       ? await AssignCourse.query("userId").eq(userId).exec()
       : await AssignCourse.scan().exec();
 
@@ -46,7 +46,10 @@ export const getUserAssignCourses = async (
       .eq(userId)
       .exec();
     const courseIds = assignedCourses.map((item: any) => item.courseId);
-    const courses = await Course.batchGet(courseIds);
+    let courses: any[] = [];
+    if (courseIds.length > 0) {
+      courses = await Course.batchGet(courseIds);
+    }
     res.json({
       message: "Assigned courses retrieved successfully",
       data: courses,

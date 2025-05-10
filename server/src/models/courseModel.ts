@@ -47,7 +47,7 @@ const chapterSchema = new Schema({
   },
 });
 
-// DELETE THIS
+
 const sectionSchema = new Schema({
   sectionId: {
     type: String,

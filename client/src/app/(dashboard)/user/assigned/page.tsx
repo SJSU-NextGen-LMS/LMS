@@ -59,7 +59,7 @@ const Courses = () => {
   if (!isLoaded || isLoading) return <Loading />;
   if (!user) return <div>Please sign in to view your courses.</div>;
   if (isError || !courses || courses.length === 0)
-    return <div>You are not enrolled in any courses yet.</div>;
+    return <div>You have no assigned courses.</div>;
 
   return (
     <div className="user-courses">
