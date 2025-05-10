@@ -2,7 +2,7 @@
 
 import { SignedIn, SignedOut, UserButton, useUser } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
-import { Bell, BookOpen } from "lucide-react";
+import { Bell, Search } from "lucide-react";
 import Link from "next/link";
 import React, { useState } from "react";
 import { SidebarTrigger } from "@/components/ui/sidebar";
@@ -32,7 +32,7 @@ const Navbar = ({ isCoursePage }: { isCoursePage: boolean }) => {
                 <span className="hidden sm:inline">Search Courses</span>
                 <span className="sm:hidden">Search</span>
               </Link>
-              <BookOpen className="dashboard-navbar__search-icon" size={18} />
+              <Search className="dashboard-navbar__search-icon" size={18} />
             </div>
           </div>
         </div>

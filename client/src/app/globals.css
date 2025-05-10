@@ -139,11 +139,11 @@ input[type="color"] {
 }
 
 .search__courses-grid {
-  @apply basis-3/5 grid grid-cols-1 xl:grid-cols-2 gap-6 auto-rows-fr;
+  @apply basis-4/5 grid grid-cols-1 xl:grid-cols-3 gap-6 auto-rows-fr;
 }
 
 .search__selected-course {
-  @apply basis-2/5 min-w-[350px] h-fit border-2 border-primary-600 bg-customgreys-secondarybg overflow-hidden rounded-lg;
+  @apply basis-1/5 min-w-[350px] h-fit border-2 border-primary-600 bg-customgreys-secondarybg overflow-hidden rounded-lg;
 }
 
 /* Selected Course Component */
