@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/select";
 import { courseCategories } from "@/lib/utils";
 
-const Toolbar = ({ onSearch, onCategoryChange }: ToolbarProps) => {
+const Toolbar = ({ onSearch, onCategoryChange, rightElement }: ToolbarProps) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = (value: string) => {
@@ -25,7 +25,10 @@ const Toolbar = ({ onSearch, onCategoryChange }: ToolbarProps) => {
         placeholder="Search courses"
         className="toolbar__search"
       />
-      <Select onValueChange={onCategoryChange}>
+      <Select onValueChange={(val) => {
+  console.log("Selected category:", val);
+  onCategoryChange(val);
+}}>
         <SelectTrigger className="toolbar__select">
           <SelectValue placeholder="Categories" />
         </SelectTrigger>
@@ -44,6 +47,7 @@ const Toolbar = ({ onSearch, onCategoryChange }: ToolbarProps) => {
           ))}
         </SelectContent>
       </Select>
+      {rightElement && <div>{rightElement}</div>}
     </div>
   );
 };

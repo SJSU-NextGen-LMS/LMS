@@ -9,6 +9,7 @@ declare global {
   interface UserSettings {
     theme?: "light" | "dark";
     emailAlerts?: boolean;
+    emailAddress?: string;
     smsAlerts?: boolean;
     courseNotifications?: boolean;
     notificationFrequency?: "immediate" | "daily" | "weekly";
@@ -21,7 +22,7 @@ declare global {
     username?: string;
     email: string;
     publicMetadata: {
-      userType: "teacher" | "student";
+      userType: "teacher" | "student" | "manager" | "admin";
     };
     privateMetadata: {
       settings?: UserSettings;
@@ -178,6 +179,7 @@ declare global {
   interface ToolbarProps {
     onSearch: (search: string) => void;
     onCategoryChange: (category: string) => void;
+    rightElement?: ReactNode;
   }
 
   interface ChapterModalProps {

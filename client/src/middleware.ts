@@ -1,25 +1,35 @@
 import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
-const isStudentRoute = createRouteMatcher(["/user/(.*)"]);
 const isTeacherRoute = createRouteMatcher(["/teacher/(.*)"]);
-
+const isManagerRoute = createRouteMatcher(["/manager/(.*)"]);
+const isAdminRoute = createRouteMatcher(["/admin/(.*)"]);
 export default clerkMiddleware(async (auth, req) => {
   const { sessionClaims } = await auth();
   const userRole =
-    (sessionClaims?.metadata as { userType: "student" | "teacher" })
+    (sessionClaims?.metadata as { userType: "student" | "teacher" | "manager" | "admin"})
       ?.userType || "student";
 
 
-  if (isStudentRoute(req)) {
-    if (userRole !== "student") {
-      const url = new URL("/teacher/courses", req.url);
+  // restrict access to teacher routes
+  if (isTeacherRoute(req)) {
+    if (userRole == "student") {
+      const url = new URL("/user/courses", req.url);
       return NextResponse.redirect(url);
     }
   }
 
-  if (isTeacherRoute(req)) {
-    if (userRole !== "teacher") {
+  // restrict access to manager routes
+  if (isManagerRoute(req)) {
+    if (userRole == "student" || userRole == "teacher") {
+      const url = new URL("/user/courses", req.url);
+      return NextResponse.redirect(url);
+    }
+  }
+
+  // restrict access to admin routes
+  if (isAdminRoute(req)) {
+    if (userRole !== "admin") {
       const url = new URL("/user/courses", req.url);
       return NextResponse.redirect(url);
     }

@@ -1,9 +1,22 @@
+import React from "react";
 import AccordionSections from "@/components/AccordionSections";
 import { Button } from "@/components/ui/button";
 import { formatPrice } from "@/lib/utils";
-import React from "react";
 
-const SelectedCourse = ({ course, handleEnrollNow }: SelectedCourseProps) => {
+// Types
+
+interface SelectedCourseProps {
+  course: Course;
+  handleEnrollNow: (courseId: string) => void;
+}
+
+/**
+ * SelectedCourse component that displays detailed information about a selected course
+ */
+const SelectedCourse: React.FC<SelectedCourseProps> = ({ 
+  course, 
+  handleEnrollNow 
+}) => {
   return (
     <div className="selected-course">
       <div>
@@ -11,7 +24,7 @@ const SelectedCourse = ({ course, handleEnrollNow }: SelectedCourseProps) => {
         <p className="selected-course__author">
           By {course.teacherName} |{" "}
           <span className="selected-course__enrollment-count">
-            {course?.enrollments?.length}
+            {course?.enrollments?.length || 0} students
           </span>
         </p>
       </div>

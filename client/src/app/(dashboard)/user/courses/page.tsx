@@ -1,20 +1,31 @@
 "use client";
 
+import { useState, useMemo } from "react";
+import { useRouter } from "next/navigation";
+import { useUser } from "@clerk/nextjs";
+
+// Components
 import Toolbar from "@/components/Toolbar";
 import CourseCard from "@/components/CourseCard";
-import { useGetUserEnrolledCoursesQuery } from "@/state/api";
-import { useRouter } from "next/navigation";
 import Header from "@/components/Header";
-import { useUser } from "@clerk/nextjs";
-import { useState, useMemo } from "react";
 import Loading from "@/components/Loading";
+import { useFilteredCourses } from "@/hooks/userFilteredCourses";
+// API Hooks
+import { useGetUserEnrolledCoursesQuery } from "@/state/api";
 
+/**
+ * Courses page component that displays all enrolled courses for the current user
+ * Includes search and category filtering functionality
+ */
 const Courses = () => {
   const router = useRouter();
   const { user, isLoaded } = useUser();
+  
+  // State for search and filtering
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
 
+  // Fetch enrolled courses
   const {
     data: courses,
     isLoading,
@@ -23,47 +34,60 @@ const Courses = () => {
     skip: !isLoaded || !user,
   });
 
-  const filteredCourses = useMemo(() => {
-    if (!courses) return [];
+  /**
+   * Filter courses based on search term and selected category
+   */
+  const filteredCourses = useFilteredCourses(courses, searchTerm, selectedCategory);
 
-    return courses.filter((course) => {
-      const matchesSearch = course.title
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase());
-      const matchesCategory =
-        selectedCategory === "all" || course.category === selectedCategory;
-      return matchesSearch && matchesCategory;
-    });
-  }, [courses, searchTerm, selectedCategory]);
-
+  /**
+   * Navigate to the first chapter of a course or the course overview
+   */
   const handleGoToCourse = (course: Course) => {
-    if (
-      course.sections &&
-      course.sections.length > 0 &&
-      course.sections[0].chapters.length > 0
-    ) {
+    const hasChapters = course.sections?.[0]?.chapters?.length > 0;
+    
+    if (hasChapters) {
       const firstChapter = course.sections[0].chapters[0];
       router.push(
         `/user/courses/${course.courseId}/chapters/${firstChapter.chapterId}`,
-        {
-          scroll: false,
-        }
+        { scroll: false }
       );
     } else {
-      router.push(`/user/courses/${course.courseId}`, {
-        scroll: false,
-      });
+      router.push(`/user/courses/${course.courseId}`, { scroll: false });
     }
   };
 
+  // Loading state
   if (!isLoaded || isLoading) return <Loading />;
+  
+  // Authentication check
   if (!user) return <div>Please sign in to view your courses.</div>;
-  if (isError || !courses || courses.length === 0)
-    return <div>You are not enrolled in any courses yet.</div>;
+  
+  // Error or empty state
+  if (isError || !courses || courses.length === 0) {
+    return (
+      <div className="user-courses">
+        <Header 
+          title="My Courses" 
+          subtitle="View your enrolled courses" 
+        />
+        <Toolbar
+          onSearch={setSearchTerm}
+          onCategoryChange={setSelectedCategory}
+        />
+        <div className="user-courses__empty">
+          You have no enrolled courses
+        </div>
+      </div>
+    );
+  }
 
+  // Main content
   return (
     <div className="user-courses">
-      <Header title="My Courses" subtitle="View your enrolled courses" />
+      <Header 
+        title="My Courses" 
+        subtitle="View your enrolled courses" 
+      />
       <Toolbar
         onSearch={setSearchTerm}
         onCategoryChange={setSelectedCategory}

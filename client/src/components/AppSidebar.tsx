@@ -12,14 +12,16 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import {
+  Search,
   BookOpen,
-  Book,
-  BookA,
+  ListTodo,
+  BookPlus,
   LogOut,
   PanelLeft,
   Settings,
   User,
-  BookCopy,
+  Users,
+  SquareLibrary,
 } from "lucide-react";
 import Loading from "./Loading";
 import Image from "next/image";
@@ -34,16 +36,38 @@ const AppSidebar = () => {
 
   const navLinks = {
     student: [
+      { icon: Search, label: "Search ", href: "/search" },
       { icon: BookOpen, label: "Enrolled", href: "/user/courses" },
-      { icon: Book, label: "Assigned", href: "/user/assigned" },
+      { icon: ListTodo, label: "Assigned", href: "/user/assigned" },
       { icon: User, label: "Profile", href: "/user/profile" },
       { icon: Settings, label: "Settings", href: "/user/settings" },
     ],
     teacher: [
-      { icon: BookCopy, label: "Courses", href: "/teacher/courses" },
-      { icon: BookA, label: "Assign", href: "/teacher/assign" },
-      { icon: User, label: "Profile", href: "/teacher/profile" },
-      { icon: Settings, label: "Settings", href: "/teacher/settings" },
+      { icon: Search, label: "Search ", href: "/search" },
+      { icon: SquareLibrary, label: "Your Courses", href: "/teacher/courses" },
+      { icon: BookOpen, label: "Enrolled", href: "/user/courses" },
+      { icon: ListTodo, label: "Assigned", href: "/user/assigned" },
+      { icon: User, label: "Profile", href: "/user/profile" },
+      { icon: Settings, label: "Settings", href: "/user/settings" },
+    ],
+    manager: [
+      { icon: Search, label: "Search ", href: "/search" },
+      { icon: BookPlus, label: "Assign", href: "/manager/assign" },
+      { icon: SquareLibrary, label: "Your Courses", href: "/teacher/courses" },
+      { icon: BookOpen, label: "Enrolled", href: "/user/courses" },
+      { icon: ListTodo, label: "Assigned", href: "/user/assigned" },
+      { icon: User, label: "Profile", href: "/user/profile" },
+      { icon: Settings, label: "Settings", href: "/user/settings" },
+    ],
+    admin: [ 
+      { icon: Search, label: "Search ", href: "/search" },
+      { icon: Users, label: "Roles", href: "/admin/roles" },
+      { icon: BookPlus, label: "Assign", href: "/manager/assign" },
+      { icon: SquareLibrary, label: "Your Courses", href: "/teacher/courses" },
+      { icon: BookOpen, label: "Enrolled", href: "/user/courses" },
+      { icon: ListTodo, label: "Assigned", href: "/user/assigned" },
+      { icon: User, label: "Profile", href: "/user/profile" },
+      { icon: Settings, label: "Settings", href: "/user/settings" },
     ],
   };
 
@@ -51,7 +75,7 @@ const AppSidebar = () => {
   if (!user) return <div>User not found</div>;
 
   const userType =
-    (user.publicMetadata.userType as "student" | "teacher") || "student";
+    (user.publicMetadata.userType as "student" | "teacher" | "manager" | "admin") || "student";
   const currentNavLinks = navLinks[userType];
 
   return (

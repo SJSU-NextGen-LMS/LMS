@@ -42,7 +42,6 @@ const Navbar = ({ isCoursePage }: { isCoursePage: boolean }) => {
             <span className="nondashboard-navbar__notification-indicator"></span>
             <Bell className="nondashboard-navbar__notification-icon" />
           </button>
-
           <UserButton
             appearance={{
               baseTheme: dark,
@@ -57,6 +56,7 @@ const Navbar = ({ isCoursePage }: { isCoursePage: boolean }) => {
               userRole === "teacher" ? "/teacher/profile" : "/user/profile"
             }
           />
+          
         </div>
       </div>
     </nav>

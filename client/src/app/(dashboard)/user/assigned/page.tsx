@@ -2,12 +2,13 @@
 
 import Toolbar from "@/components/Toolbar";
 import CourseCard from "@/components/CourseCard";
-import { useGetUserEnrolledCoursesQuery,useGetAssignCoursesQuery } from "@/state/api";
+import { useGetAssignCoursesQuery } from "@/state/api";
 import { useRouter } from "next/navigation";
 import Header from "@/components/Header";
 import { useUser } from "@clerk/nextjs";
 import { useState, useMemo } from "react";
 import Loading from "@/components/Loading";
+import { useFilteredCourses } from "@/hooks/userFilteredCourses";
 
 const Courses = () => {
   const router = useRouter();
@@ -23,18 +24,7 @@ const Courses = () => {
     skip: !isLoaded || !user,
   });
 
-  const filteredCourses = useMemo(() => {
-    if (!courses) return [];
-
-    return courses.filter((course) => {
-      const matchesSearch = course.title
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase());
-      const matchesCategory =
-        selectedCategory === "all" || course.category === selectedCategory;
-      return matchesSearch && matchesCategory;
-    });
-  }, [courses, searchTerm, selectedCategory]);
+  const filteredCourses = useFilteredCourses(courses, searchTerm, selectedCategory);
 
   const handleGoToCourse = (course: Course) => {
     if (
@@ -59,11 +49,21 @@ const Courses = () => {
   if (!isLoaded || isLoading) return <Loading />;
   if (!user) return <div>Please sign in to view your courses.</div>;
   if (isError || !courses || courses.length === 0)
-    return <div>You have no assigned courses.</div>;
+    return(
+      <div className="user-courses">
+      <Header title="Assigned Courses" subtitle="View your assigned courses" />
+      <Toolbar
+        onSearch={setSearchTerm}
+        onCategoryChange={setSelectedCategory}
+      /> 
+      You have no assigned courses
+      </div>
+      )
 
   return (
+    
     <div className="user-courses">
-      <Header title="My Courses" subtitle="View your enrolled courses" />
+      <Header title="Assigned Courses" subtitle="View your assigned courses" />
       <Toolbar
         onSearch={setSearchTerm}
         onCategoryChange={setSelectedCategory}

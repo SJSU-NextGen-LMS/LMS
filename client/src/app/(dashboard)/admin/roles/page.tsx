@@ -30,25 +30,25 @@ const AdminPage = () => {
     {
       title: 'Name',
       key: 'name',
-      render: (record: any) => `${record.firstName} ${record.lastName}`
+      render: (record: User) => `${record.firstName} ${record.lastName}`
     },
     {
       title: 'Email',
       key: 'email',
-      render: (record: any) => record.emailAddresses[0]?.emailAddress || 'N/A'
+      render: (record: User) => record.email || 'N/A'
     },
     {
       title: 'Current Role',
       key: 'userType',
-      render: (record: any) => record.publicMetadata?.userType || 'Not Set'
+      render: (record: User) => record.publicMetadata?.userType || 'Not Set'
     },
     {
       title: 'Action',
       key: 'action',
-      render: (record: any) => (
+      render: (record: User) => (
         <Button 
           type="primary"
-          onClick={() => setSelectedUser(record.id)}
+          onClick={() => setSelectedUser(record.userId)}
         >
           Change Role
         </Button>
@@ -85,7 +85,6 @@ const AdminPage = () => {
         title="User Role Management"
         subtitle="Manage user roles and permissions"
       />
-
       <Table 
         dataSource={users}
         columns={columns}
@@ -108,6 +107,7 @@ const AdminPage = () => {
             <Select>
               <Select.Option value="student">Student</Select.Option>
               <Select.Option value="teacher">Teacher</Select.Option>
+              <Select.Option value="manager">Manager</Select.Option>
               <Select.Option value="admin">Admin</Select.Option>
             </Select>
           </Form.Item>
