@@ -26,7 +26,6 @@ const Toolbar = ({ onSearch, onCategoryChange, rightElement }: ToolbarProps) => 
         className="toolbar__search"
       />
       <Select onValueChange={(val) => {
-  console.log("Selected category:", val);
   onCategoryChange(val);
 }}>
         <SelectTrigger className="toolbar__select">

@@ -68,7 +68,7 @@ export const createAssignCourse = async (
   const { userId, courseId, note, dueDate } = req.body;
   
   try {
-    console.log(userId, courseId, note, dueDate);
+    //console.log(userId, courseId, note, dueDate);
 
     const parsedDueDate = new Date(dueDate);
     if (isNaN(parsedDueDate.getTime())) {

@@ -50,8 +50,6 @@ export const getTeacherCourses = async (
 
   if (!auth || auth.userId !== userId) {
     res.status(403).json({ message: "Access denied" });
-    console.log("auth", auth.userId)
-    console.log("userId", userId)
     return;
   }
 
@@ -59,9 +57,7 @@ export const getTeacherCourses = async (
     const teacherCourses = await Course.scan("teacherId")
       .eq(userId)
       .exec();
-    console.log("teacherCourses", teacherCourses)
     const courseIds = teacherCourses.map((item: any) => item.courseId);
-    console.log("courseIds", courseIds)
     let courses: any[] = [];
     if (courseIds.length > 0) {
       courses = await Course.batchGet(courseIds);
