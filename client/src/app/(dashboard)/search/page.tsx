@@ -3,6 +3,8 @@
 import { useMemo, useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useUser } from "@clerk/nextjs";
+import { v4 as uuidv4 } from "uuid";
+import { message } from "antd";
 
 // Components
 import CourseCardSearch from "@/components/CourseCardSearch";
@@ -12,11 +14,7 @@ import SelectedCourse from "./SelectedCourse";
 import Toolbar from "@/components/Toolbar";
 import { useFilteredCourses } from "@/hooks/userFilteredCourses";
 // API Hooks
-import {
-  useGetCoursesQuery,
-  useCreateTransactionMutation,
-} from "@/state/api";
-
+import { useGetCoursesQuery, useCreateTransactionMutation } from "@/state/api";
 
 /**
  * Search page component that allows users to browse and enroll in courses
@@ -39,15 +37,19 @@ const Search = () => {
     isError,
   } = useGetCoursesQuery({ category: "all" });
 
-  const [createTransaction, { 
-    isLoading: isTransactionLoading, 
-    isError: isTransactionError 
-  }] = useCreateTransactionMutation();
+  const [
+    createTransaction,
+    { isLoading: isTransactionLoading, isError: isTransactionError },
+  ] = useCreateTransactionMutation();
 
   /**
    * Filter courses based on search term and selected category
    */
-  const filteredCourses = useFilteredCourses(courses, searchTerm, selectedCategory);
+  const filteredCourses = useFilteredCourses(
+    courses,
+    searchTerm,
+    selectedCategory
+  );
 
   /**
    * Handle course selection and update URL
@@ -63,22 +65,27 @@ const Search = () => {
    * Handle course enrollment
    */
   const handleEnrollNow = async (courseId: string) => {
-    if (!user) return;
+    if (!user) {
+      message.error("You must be logged in to enroll");
+      return;
+    }
 
     try {
       const transactionData: Partial<Transaction> = {
-        transactionId: "empty",
+        transactionId: uuidv4(),
         userId: user.id,
         courseId,
         paymentProvider: "stripe",
         amount: 0,
+        dateTime: new Date().toISOString(),
       };
-  
+
       await createTransaction(transactionData).unwrap();
+      message.success("Successfully enrolled in course");
       router.push("/user/courses");
     } catch (error) {
       console.error("Transaction failed:", error);
-      // You might want to show a toast notification here
+      message.error("Failed to enroll in course");
     }
   };
 
@@ -109,10 +116,7 @@ const Search = () => {
 
   return (
     <div className="search_page">
-      <Header
-        title="Courses"
-        subtitle="Browse courses"
-      />
+      <Header title="Courses" subtitle="Browse courses" />
       <Toolbar
         onSearch={setSearchTerm}
         onCategoryChange={setSelectedCategory}

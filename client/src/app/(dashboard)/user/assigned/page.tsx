@@ -1,7 +1,7 @@
 "use client";
 
 import Toolbar from "@/components/Toolbar";
-import CourseCard from "@/components/CourseCard";
+import AssignedCourseCard from "@/components/AssignedCourseCard";
 import { useGetAssignCoursesQuery } from "@/state/api";
 import { useRouter } from "next/navigation";
 import Header from "@/components/Header";
@@ -10,7 +10,7 @@ import { useState, useMemo } from "react";
 import Loading from "@/components/Loading";
 import { useFilteredCourses } from "@/hooks/userFilteredCourses";
 
-const Courses = () => {
+const AssignedCourses = () => {
   const router = useRouter();
   const { user, isLoaded } = useUser();
   const [searchTerm, setSearchTerm] = useState("");
@@ -24,7 +24,11 @@ const Courses = () => {
     skip: !isLoaded || !user,
   });
 
-  const filteredCourses = useFilteredCourses(courses, searchTerm, selectedCategory);
+  const filteredCourses = useFilteredCourses(
+    courses,
+    searchTerm,
+    selectedCategory
+  );
 
   const handleGoToCourse = (course: Course) => {
     if (
@@ -49,28 +53,33 @@ const Courses = () => {
   if (!isLoaded || isLoading) return <Loading />;
   if (!user) return <div>Please sign in to view your courses.</div>;
   if (isError || !courses || courses.length === 0)
-    return(
+    return (
       <div className="user-courses">
-      <Header title="Assigned Courses" subtitle="View your assigned courses" />
-      <Toolbar
-        onSearch={setSearchTerm}
-        onCategoryChange={setSelectedCategory}
-      /> 
-      You have no assigned courses
+        <Header
+          title="Assigned Courses"
+          subtitle="View your assigned courses and enroll"
+        />
+        <Toolbar
+          onSearch={setSearchTerm}
+          onCategoryChange={setSelectedCategory}
+        />
+        <div className="p-4 text-center">You have no assigned courses</div>
       </div>
-      )
+    );
 
   return (
-    
     <div className="user-courses">
-      <Header title="Assigned Courses" subtitle="View your assigned courses" />
+      <Header
+        title="Assigned Courses"
+        subtitle="View your assigned courses and enroll"
+      />
       <Toolbar
         onSearch={setSearchTerm}
         onCategoryChange={setSelectedCategory}
       />
       <div className="user-courses__grid">
         {filteredCourses.map((course) => (
-          <CourseCard
+          <AssignedCourseCard
             key={course.courseId}
             course={course}
             onGoToCourse={handleGoToCourse}
@@ -81,4 +90,4 @@ const Courses = () => {
   );
 };
 
-export default Courses;
+export default AssignedCourses;
