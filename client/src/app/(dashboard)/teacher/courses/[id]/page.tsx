@@ -1,7 +1,7 @@
 "use client";
 
 import { CustomFormField } from "@/components/CustomFormField";
-import Header from "@/components/Header";
+import HeaderCreateCourse from "@/components/HeaderCreateCourse";
 import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { courseSchema } from "@/lib/schemas";
@@ -96,7 +96,7 @@ const CourseEditor = () => {
 
       <Form {...methods}>
         <form onSubmit={methods.handleSubmit(onSubmit)}>
-          <Header
+          <HeaderCreateCourse
             title="Course Setup"
             subtitle="Complete all fields and save your course"
             rightElement={

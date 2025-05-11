@@ -36,6 +36,8 @@ services:
       - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
       - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
       - AWS_REGION=${AWS_REGION}
+      - CLOUDFRONT_DOMAIN=${CLOUDFRONT_DOMAIN}
+      - S3_BUCKET_NAME=${S3_BUCKET_NAME}
     volumes:
       - ./server:/app:cached
       - server_node_modules:/app/node_modules

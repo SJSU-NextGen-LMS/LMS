@@ -150,3 +150,54 @@ export const calculateOverallProgress = (sections: any[]): number => {
 
   return totalChapters > 0 ? (completedChapters / totalChapters) * 100 : 0;
 };
+const uploadVideo = async (file: File, uploadUrl: string, headers: any) => {
+  try {
+    const response = await fetch(uploadUrl, {
+      method: 'PUT',
+      body: file,
+      headers: {
+        'Content-Type': file.type,
+        ...headers
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error(`Upload failed: ${response.statusText}`);
+    }
+
+    return response;
+  } catch (error) {
+    console.error('Error uploading video:', error);
+    throw error;
+  }
+};
+
+const uploadAllVideos = async (files: File[]) => {
+  try {
+    const uploadPromises = files.map(async (file) => {
+      // Get the signed URL and headers from your backend
+      const response = await fetch('/api/get-upload-url', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          fileName: file.name,
+          fileType: file.type,
+        }),
+      });
+
+      const { uploadUrl, videoUrl, headers } = await response.json();
+      
+      // Upload the file with the headers
+      await uploadVideo(file, uploadUrl, headers);
+      
+      return videoUrl;
+    });
+
+    return await Promise.all(uploadPromises);
+  } catch (error) {
+    console.error('Error uploading videos:', error);
+    throw error;
+  }
+};

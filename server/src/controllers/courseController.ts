@@ -217,7 +217,7 @@ export const getUploadVideoUrl = async (
     const s3Params = {
       Bucket: process.env.S3_BUCKET_NAME || "",
       Key: s3Key,
-      Expires: 60,
+      Expires: 3600,
       ContentType: fileType,
     };
 
@@ -226,9 +226,18 @@ export const getUploadVideoUrl = async (
 
     res.json({
       message: "Upload URL generated successfully",
-      data: { uploadUrl, videoUrl },
+      data: { 
+        uploadUrl, 
+        videoUrl,
+        headers: {
+          'x-amz-acl': 'public-read',
+          'x-amz-server-side-encryption': 'AES256',
+          'x-amz-meta-uploader': 'course-upload'
+        }
+      },
     });
   } catch (error) {
+    console.error('Error generating upload URL:', error);
     res.status(500).json({ message: "Error generating upload URL", error });
   }
 };

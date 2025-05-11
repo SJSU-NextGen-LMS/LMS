@@ -63,7 +63,7 @@ if (!isProduction) {
     console.log(`Server running on port ${port}`);
   });
 }
-/*
+
 // aws production environment
 const serverlessApp = serverless(app);
 export const handler = async (event: any, context: any) => {
@@ -77,4 +77,3 @@ export const handler = async (event: any, context: any) => {
     return serverlessApp(event, context);
   }
 };
-*/
