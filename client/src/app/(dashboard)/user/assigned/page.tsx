@@ -25,9 +25,9 @@ const AssignedCourses = () => {
   });
 
   const filteredCourses = useFilteredCourses(
-    courses,
+    courses?.filter((course) => course.assignment.status !== "Completed"),
     searchTerm,
-    selectedCategory
+    selectedCategory,
   );
 
   const handleGoToCourse = (course: Course) => {

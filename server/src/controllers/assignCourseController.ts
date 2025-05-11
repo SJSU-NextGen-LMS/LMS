@@ -72,8 +72,22 @@ export const getUserAssignCourses = async (
     const courseIds = assignedCourses.map((item: any) => item.courseId);
     let courses: any[] = [];
     if (courseIds.length > 0) {
-      courses = await Course.batchGet(courseIds);
+      const fetchedCourses = await Course.batchGet(courseIds);
+
+    // Merge course data with assignedCourse data
+      courses = fetchedCourses.map((course: any) => {
+        const assignment = assignedCourses.find((a: any) => a.courseId === course.courseId);
+        return {
+          ...course,
+          assignment: {
+            note: assignment?.note,
+            dueDate: assignment?.dueDate,
+            status: assignment?.status,
+          },
+        };
+      });
     }
+    console.log(courses);
     res.json({
       message: "Assigned courses retrieved successfully",
       data: courses,
