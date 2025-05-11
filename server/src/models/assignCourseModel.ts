@@ -12,6 +12,14 @@ const assignCourseSchema = new Schema(
       rangeKey: true,
       required: true
     },
+    managerId: {
+      type: String,
+      required: true
+    },
+    managerName: {
+      type: String,
+      required: true
+    },
     note: {
       type: String
     },

@@ -21,6 +21,8 @@ import {
 interface AssignCourseFormData {
   userId: string;
   courseId: string;
+  managerId: string;
+  managerName: string;
   note: string;
   dueDate: string;
 }
@@ -61,6 +63,8 @@ const AssignCourseForm = () => {
       await createAssignCourse({
         userId: values.userId,
         courseId: values.courseId,
+        managerId: user?.id ?? "",
+        managerName: user?.fullName ?? "",
         note: values.note || "Assigned by manager",
         dueDate: formattedDate,
       }).unwrap();

@@ -87,7 +87,6 @@ export const getUserAssignCourses = async (
         };
       });
     }
-    console.log(courses);
     res.json({
       message: "Assigned courses retrieved successfully",
       data: courses,
@@ -103,7 +102,7 @@ export const createAssignCourse = async (
   req: Request,
   res: Response
 ): Promise<void> => {
-  const { userId, courseId, note, dueDate } = req.body;
+  const { userId, courseId, note, dueDate, managerId, managerName } = req.body;
   
   try {
     //console.log(userId, courseId, note, dueDate);
@@ -117,6 +116,8 @@ export const createAssignCourse = async (
     const newAssignCourse = new AssignCourse({
       userId,
       courseId,
+      managerId,
+      managerName,
       note,
       dueDate: parsedDueDate,
       status: "Assigned",

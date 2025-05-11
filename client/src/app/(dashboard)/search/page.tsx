@@ -46,7 +46,7 @@ const Search = () => {
    * Filter courses based on search term and selected category
    */
   const filteredCourses = useFilteredCourses(
-    courses,
+    courses?.filter((course) => !course.enrollments?.find((enrollment) => enrollment.userId == user?.id)),
     searchTerm,
     selectedCategory
   );

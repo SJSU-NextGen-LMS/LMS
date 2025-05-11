@@ -44,28 +44,14 @@ services:
     networks:
       - app-network
 
-  # Initialize the data directory with proper permissions
-  dynamodb-init:
-    image: busybox
-    command: sh -c "mkdir -p /tmp/data && chmod 777 /tmp/data && cp -rp /source/* /tmp/data/ 2>/dev/null || true && chmod -R 777 /tmp/data"
-    volumes:
-      - ./docker/dynamodb:/source
-      - dynamodb-data:/tmp/data
-    networks:
-      - app-network
-
   dynamodb-local:
     image: "amazon/dynamodb-local:latest"
     container_name: dynamodb-local
     command: "-jar DynamoDBLocal.jar -sharedDb -dbPath /home/dynamodblocal/data"
     ports:
       - "8000:8000"
-    depends_on:
-      - dynamodb-init
     volumes:
-      - dynamodb-data:/home/dynamodblocal/data
-    working_dir: /home/dynamodblocal
-    user: "1000:1000"
+      - ./docker/dynamodb/data:/home/dynamodblocal/data
     networks:
       - app-network
 

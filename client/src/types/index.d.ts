@@ -81,6 +81,8 @@ declare global {
   interface AssignCourse {
     userId: string;
     courseId: string;
+    managerId: string;
+    managerName: string;
     note: string;
     dueDate: date;
     status: string;
