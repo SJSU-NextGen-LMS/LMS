@@ -6,7 +6,7 @@ import { useUser } from "@clerk/nextjs";
 
 // Components
 import Toolbar from "@/components/Toolbar";
-import CourseCard from "@/components/CourseCard";
+import UserCourseCard from "@/components/UserCourseCard";
 import Header from "@/components/Header";
 import Loading from "@/components/Loading";
 import { useFilteredCourses } from "@/hooks/userFilteredCourses";
@@ -20,7 +20,7 @@ import { useGetUserEnrolledCoursesQuery } from "@/state/api";
 const Courses = () => {
   const router = useRouter();
   const { user, isLoaded } = useUser();
-  
+
   // State for search and filtering
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -37,14 +37,18 @@ const Courses = () => {
   /**
    * Filter courses based on search term and selected category
    */
-  const filteredCourses = useFilteredCourses(courses, searchTerm, selectedCategory);
+  const filteredCourses = useFilteredCourses(
+    courses,
+    searchTerm,
+    selectedCategory
+  );
 
   /**
    * Navigate to the first chapter of a course or the course overview
    */
   const handleGoToCourse = (course: Course) => {
     const hasChapters = course.sections?.[0]?.chapters?.length > 0;
-    
+
     if (hasChapters) {
       const firstChapter = course.sections[0].chapters[0];
       router.push(
@@ -58,23 +62,23 @@ const Courses = () => {
 
   // Loading state
   if (!isLoaded || isLoading) return <Loading />;
-  
+
   // Authentication check
   if (!user) return <div>Please sign in to view your courses.</div>;
-  
+
   // Error or empty state
   if (isError || !courses || courses.length === 0) {
     return (
       <div className="user-courses">
-        <Header 
-          title="My Courses" 
-          subtitle="View your enrolled courses" 
+        <Header
+          title="My Courses"
+          subtitle="View your enrolled courses and track your progress"
         />
         <Toolbar
           onSearch={setSearchTerm}
           onCategoryChange={setSelectedCategory}
         />
-        <div className="user-courses__empty">
+        <div className="p-4 text-center text-customgreys-dirtyGrey">
           You have no enrolled courses
         </div>
       </div>
@@ -84,9 +88,9 @@ const Courses = () => {
   // Main content
   return (
     <div className="user-courses">
-      <Header 
-        title="My Courses" 
-        subtitle="View your enrolled courses" 
+      <Header
+        title="My Courses"
+        subtitle="View your enrolled courses and track your progress"
       />
       <Toolbar
         onSearch={setSearchTerm}
@@ -94,7 +98,7 @@ const Courses = () => {
       />
       <div className="user-courses__grid">
         {filteredCourses.map((course) => (
-          <CourseCard
+          <UserCourseCard
             key={course.courseId}
             course={course}
             onGoToCourse={handleGoToCourse}

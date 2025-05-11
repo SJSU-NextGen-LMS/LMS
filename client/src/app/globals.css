@@ -1562,3 +1562,73 @@ input[type="color"] {
   .ant-select-item-option-active:not(.ant-select-item-option-selected) {
   background-color: #333 !important;
 }
+
+/* Dark theme table styling */
+.ant-table {
+  background-color: transparent !important;
+  color: #e0e0e0 !important;
+}
+
+.ant-table-thead > tr > th {
+  background-color: #2a2a2a !important;
+  color: #fff !important;
+  border-bottom: 1px solid #444 !important;
+  border-right: none !important;
+}
+
+.ant-table-cell::before {
+  display: none !important;
+}
+
+.ant-table-tbody > tr > td {
+  border-bottom: 1px solid #333 !important;
+  border-right: none !important;
+  color: #e0e0e0 !important;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background-color: #333 !important;
+}
+
+.ant-table-tbody > tr.ant-table-row:hover > td {
+  background-color: #333 !important;
+}
+
+.ant-table-cell-row-hover {
+  background-color: #333 !important;
+}
+
+.ant-pagination-item {
+  background-color: #2a2a2a !important;
+  border-color: #444 !important;
+}
+
+.ant-pagination-item a {
+  color: #e0e0e0 !important;
+}
+
+.ant-pagination-item-active {
+  background-color: #1677ff !important;
+  border-color: #1677ff !important;
+}
+
+.ant-pagination-item-active a {
+  color: #fff !important;
+}
+
+.ant-pagination-prev .ant-pagination-item-link,
+.ant-pagination-next .ant-pagination-item-link {
+  background-color: #2a2a2a !important;
+  border-color: #444 !important;
+  color: #e0e0e0 !important;
+}
+
+.ant-pagination-disabled .ant-pagination-item-link {
+  color: #666 !important;
+}
+
+/* Page container */
+.page-container {
+  width: 100%;
+  padding: 24px;
+}

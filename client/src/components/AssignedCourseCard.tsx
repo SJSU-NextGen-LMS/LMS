@@ -8,12 +8,16 @@ import {
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { formatPrice } from "@/lib/utils";
-import { useCreateTransactionMutation } from "@/state/api";
+import {
+  useCreateTransactionMutation,
+  useGetUserEnrolledCoursesQuery,
+} from "@/state/api";
 import { useUser } from "@clerk/nextjs";
 import { message } from "antd";
 import { v4 as uuidv4 } from "uuid";
+import { CheckCircle, BookOpen } from "lucide-react";
 
 interface AssignedCourseCardProps {
   course: Course;
@@ -26,13 +30,38 @@ const AssignedCourseCard = ({
 }: AssignedCourseCardProps) => {
   const { user } = useUser();
   const [enrolling, setEnrolling] = useState(false);
+  const [isEnrolled, setIsEnrolled] = useState(false);
   const [createTransaction] = useCreateTransactionMutation();
+
+  // Fetch user's enrolled courses to check enrollment status
+  const { data: enrolledCourses } = useGetUserEnrolledCoursesQuery(
+    user?.id ?? "",
+    {
+      skip: !user?.id,
+    }
+  );
+
+  // Check if the user is already enrolled in this course
+  useEffect(() => {
+    if (enrolledCourses && course) {
+      const enrolled = enrolledCourses.some(
+        (enrolledCourse) => enrolledCourse.courseId === course.courseId
+      );
+      setIsEnrolled(enrolled);
+    }
+  }, [enrolledCourses, course]);
 
   const handleEnroll = async (e: React.MouseEvent) => {
     e.stopPropagation(); // Prevent card click from triggering
 
     if (!user?.id) {
       message.error("You must be logged in to enroll");
+      return;
+    }
+
+    if (isEnrolled) {
+      // If already enrolled, just navigate to the course
+      onGoToCourse(course);
       return;
     }
 
@@ -53,6 +82,7 @@ const AssignedCourseCard = ({
       }).unwrap();
 
       message.success("Successfully enrolled in course");
+      setIsEnrolled(true);
 
       // Redirect to the course
       onGoToCourse(course);
@@ -62,6 +92,28 @@ const AssignedCourseCard = ({
     } finally {
       setEnrolling(false);
     }
+  };
+
+  const getButtonContent = () => {
+    if (enrolling) {
+      return "Enrolling...";
+    }
+
+    if (isEnrolled) {
+      return (
+        <div className="flex items-center justify-center gap-2">
+          <CheckCircle className="h-4 w-4" />
+          <span>Continue Learning</span>
+        </div>
+      );
+    }
+
+    return (
+      <div className="flex items-center justify-center gap-2">
+        <BookOpen className="h-4 w-4" />
+        <span>Enroll Now</span>
+      </div>
+    );
   };
 
   return (
@@ -108,15 +160,21 @@ const AssignedCourseCard = ({
 
         <Button
           onClick={handleEnroll}
-          className="w-full bg-primary-700 hover:bg-primary-600 text-white-50 font-medium py-2 mt-2"
+          className={`w-full font-medium py-2 mt-2 ${
+            isEnrolled
+              ? "bg-green-700 hover:bg-green-600 text-white-50"
+              : "bg-primary-700 hover:bg-primary-600 text-white-50"
+          }`}
           disabled={enrolling}
         >
-          {enrolling ? "Enrolling..." : "Enroll Now"}
+          {getButtonContent()}
         </Button>
 
         <CardFooter className="course-card__footer mt-3 px-0">
           <div className="course-card__category">{course.category}</div>
-          <div className="text-xs text-gray-400">Assigned Course</div>
+          <div className="text-xs text-gray-400">
+            {isEnrolled ? "Enrolled" : "Assigned Course"}
+          </div>
         </CardFooter>
       </CardContent>
     </Card>
