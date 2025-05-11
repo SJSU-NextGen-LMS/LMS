@@ -17,6 +17,7 @@ declare global {
 
   interface User {
     userId: string;
+    id: string;
     firstName?: string;
     lastName?: string;
     username?: string;
@@ -53,6 +54,14 @@ declare global {
     enrollments?: Array<{
       userId: string;
     }>;
+    assignment?: {
+      status: string;
+      managerId: string;
+      managerName: string;
+      note: string;
+      dueDate: string;
+    };
+    
   }
 
   interface Transaction {
