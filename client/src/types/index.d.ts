@@ -20,7 +20,9 @@ declare global {
     firstName?: string;
     lastName?: string;
     username?: string;
-    email: string;
+    emailAddresses: {
+      emailAddress: string;
+    }[];
     publicMetadata: {
       userType: "teacher" | "student" | "manager" | "admin";
     };
