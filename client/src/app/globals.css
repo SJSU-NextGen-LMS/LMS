@@ -1529,3 +1529,36 @@ input[type="color"] {
 .dashboard-navbar__sidebar-trigger {
   @apply text-customgreys-dirtyGrey hover:text-white-50 transition-colors;
 }
+
+/* Dark theme selects */
+.dark-select .ant-select-selector {
+  background-color: #2a2a2a !important;
+  color: #fff !important;
+  border-color: #444 !important;
+}
+
+.dark-select .ant-select-selection-placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.dark-select .ant-select-arrow {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* For dropdown items */
+.ant-select-dropdown {
+  background-color: #2a2a2a !important;
+}
+
+.ant-select-dropdown .ant-select-item {
+  color: #fff !important;
+}
+
+.ant-select-dropdown .ant-select-item-option-selected {
+  background-color: #1677ff !important;
+}
+
+.ant-select-dropdown
+  .ant-select-item-option-active:not(.ant-select-item-option-selected) {
+  background-color: #333 !important;
+}
