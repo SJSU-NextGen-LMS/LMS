@@ -1,0 +1,24 @@
+service: lms-backend
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: us-west-2
+  stage: prod
+  environment:
+    CLERK_SECRET_KEY: ${env:CLERK_SECRET_KEY}
+    CLERK_PUBLISHABLE_KEY: ${env:CLERK_PUBLISHABLE_KEY}
+    S3_BUCKET_NAME: ${env:S3_BUCKET_NAME}
+    CLOUDFRONT_DOMAIN: ${env:CLOUDFRONT_DOMAIN}
+
+functions:
+  api:
+    handler: handler.handler
+    events:
+      - http:
+          path: /{proxy+}
+          method: any
+          cors: true
+
+plugins:
+  - serverless-offline

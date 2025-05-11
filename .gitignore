@@ -15,6 +15,7 @@ Thumbs.db
 .vscode/
 
 server/dynamodb-local-metadata.json
+server/.serverless/
 
 docker-compose.yml
 client/dockerfile
