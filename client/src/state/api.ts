@@ -187,6 +187,10 @@ export const api = createApi({
       query: (userId) => `assignCourse/${userId}`,
     }),
 
+    getUserAssignCourse: build.query<AssignCourse, { userId: string; courseId: string }>({
+      query: ({ userId, courseId }) => `assignCourse/${userId}/${courseId}`,
+    }),
+
     createAssignCourse: build.mutation<AssignCourse, Partial<AssignCourse>>({
       query: (assignCourse) => ({
         url: "assignCourse",
@@ -273,5 +277,6 @@ export const {
   useGetUsersQuery,
   useCreateAssignCourseMutation,
   useGetAssignCoursesQuery,
+  useGetUserAssignCourseQuery,
   useGetTeacherCoursesQuery,
 } = api;

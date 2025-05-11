@@ -44,6 +44,12 @@ const userCourseProgressSchema = new Schema(
       type: Number,
       required: true,
     },
+    status: {
+      type: String,
+      enum: ['in_progress', 'completed'],
+      default: 'in_progress',
+      required: true,
+    },
     sections: {
       type: Array,
       schema: [sectionProgressSchema],

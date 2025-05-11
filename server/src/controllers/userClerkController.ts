@@ -24,9 +24,25 @@ export const updateUser = async (
 
 export const getUsers = async (req: Request, res: Response): Promise<void> => {
   try {
-    const {data} = await clerkClient.users.getUserList()
+    let allUsers: any[] = [];
+    let pageToken: number | undefined;
+    let maxIterations = 1000;
 
-    res.json({ message: "Courses retrieved successfully", data });
+    do {
+      const response = await clerkClient.users.getUserList({
+        limit: 100,
+        offset: pageToken,
+      });
+      pageToken = 0
+      maxIterations--;
+
+      allUsers = allUsers.concat(response.data);
+      if(allUsers.length != response.totalCount){
+        pageToken = allUsers.length;
+      }
+    } while (pageToken && maxIterations > 0);
+
+    res.json({ message: "Users retrieved successfully", data: allUsers });
   } catch (error) {
     console.error('Error fetching users:', error);
     res.status(500).json({ message: "Error retrieving users", error });

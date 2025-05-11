@@ -123,9 +123,14 @@ const AssignCourseForm = () => {
             rules={[{ required: true, message: "Please select a user" }]}
           >
             <Select
+              showSearch
               placeholder="Select a user"
               style={{ backgroundColor: "#2a2a2a", color: "#fff" }}
               className="dark-select"
+              filterOption={(input, option) =>
+                String(option?.children ?? '').toLowerCase().includes(input.toLowerCase())
+              }
+              optionFilterProp="children"
             >
               {users.map((user: any) => (
                 <Select.Option key={user.id} value={user.id}>
@@ -134,16 +139,20 @@ const AssignCourseForm = () => {
               ))}
             </Select>
           </Form.Item>
-
           <Form.Item
             name="courseId"
             label={<span style={{ color: "#e0e0e0" }}>Select Course</span>}
             rules={[{ required: true, message: "Please select a course" }]}
           >
             <Select
+              showSearch
               placeholder="Select a course"
               style={{ backgroundColor: "#2a2a2a", color: "#fff" }}
               className="dark-select"
+              filterOption={(input, option) =>
+                String(option?.children ?? '').toLowerCase().includes(input.toLowerCase())
+              }
+              optionFilterProp="children"
             >
               {courses.map((course: Course) => (
                 <Select.Option key={course.courseId} value={course.courseId}>

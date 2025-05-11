@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { getAuth } from "@clerk/express";
 import UserCourseProgress from "../models/userCourseProgressModel";
+import AssignCourse from "../models/assignCourseModel";
 import Course from "../models/courseModel";
 import { calculateOverallProgress } from "../utils/utils";
 import { mergeSections } from "../utils/utils";
@@ -71,7 +72,6 @@ export const updateUserCourseProgress = async (
 
   try {
     let progress = await UserCourseProgress.get({ userId, courseId });
-
     if (!progress) {
       // If no progress exists, create initial progress
       progress = new UserCourseProgress({
@@ -79,6 +79,7 @@ export const updateUserCourseProgress = async (
         courseId,
         enrollmentDate: new Date().toISOString(),
         overallProgress: 0,
+        status: 'in_progress',
         sections: progressData.sections || [],
         lastAccessedTimestamp: new Date().toISOString(),
       });
@@ -90,6 +91,18 @@ export const updateUserCourseProgress = async (
       );
       progress.lastAccessedTimestamp = new Date().toISOString();
       progress.overallProgress = calculateOverallProgress(progress.sections);
+      
+      // Update status if progress is 100%
+      if (progress.overallProgress === 100) {
+        progress.status = 'completed';
+        let assignCourse = await AssignCourse.get({ userId, courseId });
+        if (assignCourse) {
+          assignCourse.status = 'Completed';
+          await assignCourse.save();
+        }
+      } else {
+        progress.status = 'in_progress';
+      }
     }
 
     await progress.save();

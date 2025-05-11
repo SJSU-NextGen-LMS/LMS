@@ -28,7 +28,31 @@ export const listAssignCourses = async (
   }
 };
 
+export const getUserAssignCourse = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  const { userId, courseId } = req.params;
+  const auth = getAuth(req);
 
+  if (!auth || auth.userId !== userId) {
+    res.status(403).json({ message: "Access denied" });
+    return;
+  }
+
+  try {
+    const assignCourse = await AssignCourse.get({ userId, courseId });
+    res.json({
+      message: "Assignment retrieved successfully",
+      data: assignCourse,
+    });
+  } catch (error) {
+    res
+    .status(500)
+    .json({ message: "Error retrieving assigned courses", error });
+  }
+  
+}
 export const getUserAssignCourses = async (
   req: Request,
   res: Response

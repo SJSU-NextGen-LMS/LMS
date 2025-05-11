@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Form, Select, Table, message, Card } from "antd";
+import { Button, Form, Select, Table, message, Card, Input } from "antd";
 import { useUser, useClerk } from "@clerk/nextjs";
 import React, { useState, useEffect } from "react";
 import Header from "@/components/Header";
@@ -15,6 +15,7 @@ const AdminPage = () => {
   const [form] = Form.useForm();
   const [updateUser] = useUpdateUserMutation();
   const { data: users, isLoading, error, refetch } = useGetUsersQuery();
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     if (!isLoading) {
@@ -26,6 +27,14 @@ const AdminPage = () => {
   if (error) return <div>Error loading users: {error.message}</div>;
   if (!users) return <div>No users found.</div>;
 
+  const filteredUsers = users?.filter((user) => {
+    const searchLower = searchText.toLowerCase();
+    const fullName = `${user.firstName} ${user.lastName}`.toLowerCase();
+    const email = (user.emailAddresses[0]?.emailAddress || "").toLowerCase();
+    
+    return fullName.includes(searchLower) || email.includes(searchLower);
+  });
+
   const columns = [
     {
       title: "Name",
@@ -35,7 +44,7 @@ const AdminPage = () => {
     {
       title: "Email",
       key: "email",
-      render: (record: User) => record.email || "N/A",
+      render: (record: User) => record.emailAddresses[0]?.emailAddress || "N/A",
     },
     {
       title: "Current Role",
@@ -48,7 +57,9 @@ const AdminPage = () => {
       render: (record: User) => (
         <Button
           type="primary"
-          onClick={() => setSelectedUser(record.userId)}
+          onClick={() => {
+            setSelectedUser(record.id);
+          }}
           style={{
             background: "#1677ff",
             borderColor: "#1677ff",
@@ -98,8 +109,22 @@ const AdminPage = () => {
           borderRadius: "8px",
         }}
       >
+        <div style={{ marginBottom: 16 }}>
+          <Input
+            placeholder="Search users by name or email"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            style={{
+              maxWidth: 300,
+              backgroundColor: "#2a2a2a",
+              color: "#fff",
+              border: "1px solid #444",
+            }}
+          />
+        </div>
+        
         <Table
-          dataSource={users}
+          dataSource={filteredUsers}
           columns={columns}
           rowKey="id"
           style={{

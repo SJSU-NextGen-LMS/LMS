@@ -2,14 +2,14 @@ import { Schema, model } from "dynamoose";
 
 const assignCourseSchema = new Schema(
   {
-    courseId: {
-      type: String,
-      rangeKey: true,
-      required: true
-    },
     userId: {
       type: String,
       hashKey: true,
+      required: true
+    },
+    courseId: {
+      type: String,
+      rangeKey: true,
       required: true
     },
     note: {
@@ -21,7 +21,8 @@ const assignCourseSchema = new Schema(
     status:{
       type: String,
         required: true,
-        enum: ["Assigned", "Enrolled", "Canceled", "Finished"],
+        default: "Assigned",
+        enum: ["Assigned", "Enrolled", "Canceled", "Completed"],
 
     }
   },

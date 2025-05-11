@@ -13,11 +13,14 @@ import { formatPrice } from "@/lib/utils";
 import {
   useCreateTransactionMutation,
   useGetUserEnrolledCoursesQuery,
+  useGetAssignCoursesQuery,
+  useGetUserAssignCourseQuery,
 } from "@/state/api";
 import { useUser } from "@clerk/nextjs";
 import { message } from "antd";
 import { v4 as uuidv4 } from "uuid";
 import { CheckCircle, BookOpen } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface AssignedCourseCardProps {
   course: Course;
@@ -31,6 +34,7 @@ const AssignedCourseCard = ({
   const { user } = useUser();
   const [enrolling, setEnrolling] = useState(false);
   const [isEnrolled, setIsEnrolled] = useState(false);
+  const [isCompleted, setIsCompleted] = useState(false);
   const [createTransaction] = useCreateTransactionMutation();
 
   // Fetch user's enrolled courses to check enrollment status
@@ -40,6 +44,10 @@ const AssignedCourseCard = ({
       skip: !user?.id,
     }
   );
+  const { data: assignCourse } = useGetUserAssignCourseQuery({
+    userId: user?.id ?? "",
+    courseId: course.courseId,
+  });
 
   // Check if the user is already enrolled in this course
   useEffect(() => {
@@ -51,6 +59,13 @@ const AssignedCourseCard = ({
     }
   }, [enrolledCourses, course]);
 
+  useEffect(() => {
+    if (assignCourse?.status === "Completed") {
+      const completed = assignCourse.status === "Completed";
+      setIsCompleted(completed);
+    }
+  }, [assignCourse]);
+
   const handleEnroll = async (e: React.MouseEvent) => {
     e.stopPropagation(); // Prevent card click from triggering
 
@@ -58,6 +73,7 @@ const AssignedCourseCard = ({
       message.error("You must be logged in to enroll");
       return;
     }
+    
 
     if (isEnrolled) {
       // If already enrolled, just navigate to the course
@@ -116,6 +132,21 @@ const AssignedCourseCard = ({
     );
   };
 
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case "Enrolled":
+        return "bg-green-500/20 text-green-400";
+      case "Assigned":
+        return "bg-blue-500/20 text-blue-400";
+      case "Canceled":
+        return "bg-red-500/20 text-red-400";
+      case "Completed":
+        return "bg-purple-500/20 text-purple-400";
+      default:
+        return "bg-gray-500/20 text-gray-400";
+    }
+  };
+
   return (
     <Card className="course-card group">
       <CardHeader
@@ -132,12 +163,22 @@ const AssignedCourseCard = ({
         />
       </CardHeader>
       <CardContent className="course-card__content">
-        <CardTitle
-          className="course-card__title"
-          onClick={() => onGoToCourse(course)}
-        >
-          {course.title}
-        </CardTitle>
+        <div className="flex justify-between items-start mb-2">
+          <CardTitle
+            className="course-card__title"
+            onClick={() => onGoToCourse(course)}
+          >
+            {course.title}
+          </CardTitle>
+          <span
+            className={cn(
+              "text-xs font-semibold px-2 py-1 rounded-full",
+              getStatusColor(isEnrolled ? isCompleted ? "Completed" : "Enrolled" : "Assigned")
+            )}
+          >
+            {isCompleted ? "Completed" : isEnrolled ? "Enrolled" : "Assigned"}
+          </span>
+        </div>
 
         <div className="flex items-center gap-2 mt-3 mb-2">
           <Avatar className="w-6 h-6">
@@ -172,9 +213,6 @@ const AssignedCourseCard = ({
 
         <CardFooter className="course-card__footer mt-3 px-0">
           <div className="course-card__category">{course.category}</div>
-          <div className="text-xs text-gray-400">
-            {isEnrolled ? "Enrolled" : "Assigned Course"}
-          </div>
         </CardFooter>
       </CardContent>
     </Card>
