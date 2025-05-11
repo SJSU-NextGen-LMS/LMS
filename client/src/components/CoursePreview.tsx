@@ -33,7 +33,7 @@ const CoursePreview = ({ course }: CoursePreviewProps) => {
         </div>
       </div>
 
-      <div className="course-preview__container">
+      {/* <div className="course-preview__container">
         <h3 className="text-xl mb-4">Price Details (1 item)</h3>
         <div className="flex justify-between mb-4 text-customgreys-dirtyGrey text-base">
           <span className="font-bold">1x {course.title}</span>
@@ -43,7 +43,7 @@ const CoursePreview = ({ course }: CoursePreviewProps) => {
           <span className="font-bold text-lg">Total Amount</span>
           <span className="font-bold text-lg">{price}</span>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

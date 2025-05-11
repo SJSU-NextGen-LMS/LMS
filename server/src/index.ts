@@ -7,6 +7,7 @@ import morgan from "morgan";
 import * as dynamoose from "dynamoose";
 import serverless from "serverless-http";
 import seed from "./seed/seedDynamodb";
+import path from 'path'
 import {
   clerkMiddleware,
   createClerkClient,
@@ -20,7 +21,9 @@ import userCourseProgressRoutes from "./routes/userCourseProgressRoutes";
 import assignCourseRoutes from "./routes/assignCourseRoutes";
 
 /* CONFIGURATIONS */
-dotenv.config();
+dotenv.config({
+  path: path.resolve(__dirname, '../.env.local'),
+});
 const isProduction = process.env.NODE_ENV === "production";
 if (!isProduction) {
   const localDBURL = process.env.DYNAMODB_LOCAL_URL||"empty";
