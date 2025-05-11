@@ -10,15 +10,29 @@ provider:
     CLERK_PUBLISHABLE_KEY: ${env:CLERK_PUBLISHABLE_KEY}
     S3_BUCKET_NAME: ${env:S3_BUCKET_NAME}
     CLOUDFRONT_DOMAIN: ${env:CLOUDFRONT_DOMAIN}
+    NODE_ENV: production
+
+  httpApi:
+    cors:
+      allowedOrigins:
+        - '*'
+      allowedMethods:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+        - OPTIONS
+      allowedHeaders:
+        - Content-Type
+        - Authorization
 
 functions:
   api:
     handler: handler.handler
     events:
-      - http:
+      - httpApi:
           path: /{proxy+}
           method: any
-          cors: true
 
 plugins:
   - serverless-offline
