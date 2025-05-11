@@ -162,13 +162,6 @@ const CourseEditor = () => {
                   initialValue={course?.category}
                 />
 
-                <CustomFormField
-                  name="coursePrice"
-                  label="Course Price"
-                  type="number"
-                  placeholder="0"
-                  initialValue={course?.price}
-                />
               </div>
             </div>
 
