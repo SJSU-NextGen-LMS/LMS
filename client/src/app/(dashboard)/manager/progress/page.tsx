@@ -37,90 +37,31 @@ import {
 } from "@/components/ui/select";
 import Loading from "@/components/Loading";
 import { Progress } from "@/components/ui/progress";
-
-interface StudentProgress {
-  userId: string;
-  courseId: string;
-  courseName: string;
-  enrollmentDate: string;
-  overallProgress: number;
-  status: string;
-  lastAccessed: string;
-}
+import { useGetAllStudentsProgressQuery } from "@/state/api";
+import { StudentProgress } from "@/state/api";
 
 const StudentProgressPage = () => {
   const { user, isLoaded } = useUser();
-  const [studentProgress, setStudentProgress] = useState<StudentProgress[]>([]);
   const [filteredProgress, setFilteredProgress] = useState<StudentProgress[]>(
     []
   );
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
 
+  // Use RTK Query hook
+  const {
+    data: studentProgress = [],
+    isLoading,
+    error,
+  } = useGetAllStudentsProgressQuery();
+
+  // Filter data when studentProgress, searchTerm, or statusFilter changes
   useEffect(() => {
-    const fetchStudentProgress = async () => {
-      if (!user || !isLoaded) return;
-
-      try {
-        // Create a properly formatted URL to avoid redirection issues
-        const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || "";
-        // Use the new direct API endpoint
-        const apiUrl = `${baseUrl.replace(/\/+$/, "")}/api/student-progress`;
-
-        console.log("Requesting from URL:", apiUrl);
-
-        // Explicitly get the authentication token using Clerk's client-side API
-        const token = await window.Clerk?.session?.getToken();
-
-        console.log("Auth token available:", !!token);
-
-        const response = await fetch(apiUrl, {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token || ""}`,
-            "x-user-type": user.publicMetadata.userType as string,
-          },
-        });
-
-        if (!response.ok) {
-          const errorText = await response.text();
-          console.error("API error response:", errorText);
-          throw new Error(`API error: ${response.status} - ${errorText}`);
-        }
-
-        // Check if response is JSON
-        const contentType = response.headers.get("content-type");
-        if (!contentType || !contentType.includes("application/json")) {
-          const text = await response.text();
-          console.error("Received non-JSON response:", text);
-          throw new Error("Invalid response format from API");
-        }
-
-        const data = await response.json();
-
-        if (!data || !data.data) {
-          console.error("Unexpected response structure:", data);
-          throw new Error("Invalid data structure from API");
-        }
-
-        setStudentProgress(data.data);
-        setFilteredProgress(data.data);
-      } catch (err: any) {
-        console.error("Error fetching student progress:", err);
-        setError(err.message || "Failed to load student progress data");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    if (isLoaded && user) {
-      fetchStudentProgress();
+    if (!studentProgress) {
+      setFilteredProgress([]);
+      return;
     }
-  }, [isLoaded, user]);
 
-  useEffect(() => {
     // Apply filters
     let filtered = [...studentProgress];
 
@@ -142,23 +83,27 @@ const StudentProgressPage = () => {
   }, [searchTerm, statusFilter, studentProgress]);
 
   // Calculate statistics
-  const completedCount = studentProgress.filter(
-    (item) => item.status === "completed"
-  ).length;
-  const inProgressCount = studentProgress.filter(
-    (item) => item.status === "in_progress"
-  ).length;
-  const totalCourses = new Set(studentProgress.map((item) => item.courseId))
-    .size;
-  const totalStudents = new Set(studentProgress.map((item) => item.userId))
-    .size;
+  const completedCount =
+    studentProgress?.filter((item) => item.status === "completed").length || 0;
+
+  const inProgressCount =
+    studentProgress?.filter((item) => item.status === "in_progress").length ||
+    0;
+
+  const totalCourses = studentProgress
+    ? new Set(studentProgress.map((item) => item.courseId)).size
+    : 0;
+
+  const totalStudents = studentProgress
+    ? new Set(studentProgress.map((item) => item.userId)).size
+    : 0;
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
     return date.toLocaleDateString();
   };
 
-  if (!isLoaded || loading) {
+  if (!isLoaded || isLoading) {
     return <Loading />;
   }
 
@@ -170,7 +115,9 @@ const StudentProgressPage = () => {
             <CardTitle className="text-xl text-red-500">Error</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>{error}</p>
+            <p>
+              {(error as any)?.error || "Failed to load student progress data"}
+            </p>
           </CardContent>
         </Card>
       </div>

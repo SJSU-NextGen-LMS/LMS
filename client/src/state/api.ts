@@ -4,6 +4,17 @@ import { User } from "@clerk/nextjs/server";
 import { Clerk } from "@clerk/clerk-js";
 import { toast } from "sonner";
 
+// Add StudentProgress interface
+export interface StudentProgress {
+  userId: string;
+  courseId: string;
+  courseName: string;
+  enrollmentDate: string;
+  overallProgress: number;
+  status: string;
+  lastAccessed: string;
+}
+
 const customBaseQuery = async (
   args: string | FetchArgs,
   api: BaseQueryApi,
@@ -220,6 +231,12 @@ export const api = createApi({
       providesTags: ["UserCourseProgress"],
     }),
 
+    getAllStudentsProgress: build.query<StudentProgress[], void>({
+      query: () => ({
+        url: "api/student-progress",
+      }),
+    }),
+
     updateUserCourseProgress: build.mutation<
       UserCourseProgress,
       {
@@ -264,20 +281,21 @@ export const api = createApi({
 
 export const {
   useUpdateUserMutation,
+  useGetUsersQuery,
+  useGetCoursesQuery,
+  useGetCourseQuery,
   useCreateCourseMutation,
   useUpdateCourseMutation,
   useDeleteCourseMutation,
-  useGetCoursesQuery,
-  useGetCourseQuery,
   useGetUploadVideoUrlMutation,
   useGetTransactionsQuery,
   useCreateTransactionMutation,
-  useGetUserEnrolledCoursesQuery,
-  useGetUserCourseProgressQuery,
-  useUpdateUserCourseProgressMutation,
-  useGetUsersQuery,
   useCreateAssignCourseMutation,
   useGetAssignCoursesQuery,
   useGetUserAssignCourseQuery,
+  useGetUserEnrolledCoursesQuery,
+  useGetUserCourseProgressQuery,
+  useUpdateUserCourseProgressMutation,
+  useGetAllStudentsProgressQuery,
   useGetTeacherCoursesQuery,
 } = api;
