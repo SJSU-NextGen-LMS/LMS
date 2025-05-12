@@ -232,9 +232,23 @@ export const api = createApi({
     }),
 
     getAllStudentsProgress: build.query<StudentProgress[], void>({
-      query: () => ({
-        url: "api/student-progress",
-      }),
+      query: () => {
+        // Get user type from window.Clerk if available
+        let userType = "unknown";
+        try {
+          // @ts-expect-error - Clerk types may not be fully compatible
+          userType = window.Clerk?.user?.publicMetadata?.userType || "unknown";
+        } catch (e) {
+          console.error("Error accessing user type:", e);
+        }
+
+        return {
+          url: "api/student-progress",
+          headers: {
+            "x-user-type": userType as string,
+          },
+        };
+      },
     }),
 
     updateUserCourseProgress: build.mutation<

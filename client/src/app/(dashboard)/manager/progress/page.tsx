@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { useUser } from "@clerk/nextjs";
 import {
   Card,
@@ -55,11 +55,10 @@ const StudentProgressPage = () => {
     error,
   } = useGetAllStudentsProgressQuery();
 
-  // Filter data when studentProgress, searchTerm, or statusFilter changes
-  useEffect(() => {
-    if (!studentProgress) {
-      setFilteredProgress([]);
-      return;
+  // Use memoization to prevent unnecessary re-renders
+  const filteredData = useMemo(() => {
+    if (!studentProgress || studentProgress.length === 0) {
+      return [];
     }
 
     // Apply filters
@@ -79,8 +78,13 @@ const StudentProgressPage = () => {
       filtered = filtered.filter((item) => item.status === statusFilter);
     }
 
-    setFilteredProgress(filtered);
+    return filtered;
   }, [searchTerm, statusFilter, studentProgress]);
+
+  // Update filtered progress when filtered data changes
+  useEffect(() => {
+    setFilteredProgress(filteredData);
+  }, [filteredData]);
 
   // Calculate statistics
   const completedCount =
