@@ -53,7 +53,21 @@ app.options("*", (req, res) => {
     "Access-Control-Allow-Methods",
     "GET, POST, PUT, DELETE, OPTIONS"
   );
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Content-Type, Authorization, x-user-type"
+  );
+  res.status(200).send();
+});
+
+// Specific OPTIONS handler for the all-progress endpoint
+app.options("/users/course-progress/all-progress", (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Content-Type, Authorization, x-user-type"
+  );
   res.status(200).send();
 });
 
@@ -68,9 +82,17 @@ app.get("/api/health", (req, res) => {
 
 // Direct endpoint for progress tracking with custom authentication
 app.get(
-  "/api/student-progress",
+  "/users/course-progress/all-progress",
   clerkMiddleware(),
   (req, res, next) => {
+    // Set CORS headers for this specific endpoint
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader("Access-Control-Allow-Methods", "GET");
+    res.setHeader(
+      "Access-Control-Allow-Headers",
+      "Content-Type, Authorization, x-user-type"
+    );
+
     console.log("Student progress API endpoint accessed");
 
     // Log all headers for debugging (except sensitive values)

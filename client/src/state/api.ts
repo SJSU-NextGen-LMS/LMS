@@ -242,11 +242,16 @@ export const api = createApi({
           console.error("Error accessing user type:", e);
         }
 
+        // In production, add mode 'cors' explicitly to ensure proper CORS handling
+        const isProduction = process.env.NODE_ENV === "production";
+
         return {
           url: "users/course-progress/all-progress",
           headers: {
             "x-user-type": userType as string,
           },
+          // In production, ensure proper CORS handling
+          credentials: isProduction ? "omit" : "include",
         };
       },
     }),
