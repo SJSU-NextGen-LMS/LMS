@@ -1,378 +1,1779 @@
 [
   {
-    "courseId": "3a9f3d6c-c391-4b1c-9c3d-6c3f3d6c3f3d",
-    "teacherId": "user_7kFh92JkCpQw3N8M5L4xRzVtYs",
-    "teacherName": "John Doe",
-    "title": "Introduction to Programming",
-    "description": "Learn the basics of programming with this comprehensive course.",
-    "category": "Computer Science",
-    "image": "https://images.pexels.com/photos/5905888/pexels-photo-5905888.jpeg",
-    "price": 4999,
+    "courseId": "065bbdb7-2c73-4fb8-a2a5-a96760db341b",
+    "teacherId": "user_2wyDdXnHNHDyWHne8bc282bZsWy",
+    "teacherName": "Ashish Bhusal",
+    "title": "Company Onboarding Essentials",
+    "description": "A comprehensive course on company onboarding essentials for corporate learning.",
+    "category": "Corporate Success",
+    "image": "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
+    "price": 0,
+    "level": "Intermediate",
+    "status": "Draft",
+    "enrollments": [
+      {
+        "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN"
+      }
+    ],
+    "sections": [
+      {
+        "sectionId": "f1ffa48a-42ce-4bc1-9e5e-4f8431aa4f73",
+        "sectionTitle": "Section f1ffa48a",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "4ccb43d1-195d-4b16-ac4a-5d18f62049fd",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 4ccb43d1-195d-4b16-ac4a-5d18f62049fd",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "bd05297f-3c0d-443b-b6e9-e9246f7585d5",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter bd05297f-3c0d-443b-b6e9-e9246f7585d5",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "449c110a-46b8-42f9-8dea-693ea62d24a8",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 449c110a-46b8-42f9-8dea-693ea62d24a8",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseId": "de8619b3-330e-467a-a337-3cfe9383bdf9",
+    "teacherId": "user_2wyDdXnHNHDyWHne8bc282bZsWy",
+    "teacherName": "Ashish Bhusal",
+    "title": "Navigating Internal Tools Effectively",
+    "description": "A comprehensive course on navigating internal tools effectively for corporate learning.",
+    "category": "Architecture Walkthrough",
+    "image": "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
+    "price": 0,
+    "level": "Beginner",
+    "status": "Draft",
+    "enrollments": [
+      {
+        "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO"
+      },
+      {
+        "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN"
+      }
+    ],
+    "sections": [
+      {
+        "sectionId": "d15389cc-d251-4be0-8c02-460df3d69992",
+        "sectionTitle": "Section d15389cc",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "2fe798b5-7b62-456e-8cf6-1d76b19a1967",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 2fe798b5-7b62-456e-8cf6-1d76b19a1967",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "1f240a45-a9f1-4d82-8eda-45f7376701f6",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 1f240a45-a9f1-4d82-8eda-45f7376701f6",
+            "comments": [],
+            "video": "https://example.com/videos/1f240a45-a9f1-4d82-8eda-45f7376701f6.mp4"
+          },
+          {
+            "chapterId": "2342e028-c06a-45f6-a12c-d4fe3860db3b",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 2342e028-c06a-45f6-a12c-d4fe3860db3b",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      },
+      {
+        "sectionId": "b170e8f7-397b-4141-9621-ef11c4f4a19a",
+        "sectionTitle": "Section b170e8f7",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "0e04cfc0-0cd9-402f-a7b4-2808c9131768",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 0e04cfc0-0cd9-402f-a7b4-2808c9131768",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "4d2d4dea-b360-4b9f-b1ca-d84f40b288ec",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 4d2d4dea-b360-4b9f-b1ca-d84f40b288ec",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "d1493163-18b3-4211-85e9-6be69613ca2b",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter d1493163-18b3-4211-85e9-6be69613ca2b",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseId": "23dd3a1b-1f91-4959-8100-6210eae45b27",
+    "teacherId": "user_2wyDdXnHNHDyWHne8bc282bZsWy",
+    "teacherName": "Ashish Bhusal",
+    "title": "Understanding Microservices Architecture",
+    "description": "A comprehensive course on understanding microservices architecture for corporate learning.",
+    "category": "Internal Tools",
+    "image": "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
+    "price": 0,
     "level": "Beginner",
     "status": "Published",
     "enrollments": [
-      { "userId": "user_2ntu96pUCljUV2T9W0AThzjacQB" },
-      { "userId": "user_9xWp45MnKjL8vRt2Hs6BqDcEy" }
+      {
+        "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN"
+      }
     ],
     "sections": [
       {
-        "sectionId": "2f9d1e8b-5a3c-4b7f-9e6d-8c2a1f0b3d5e",
-        "sectionTitle": "Getting Started",
-        "sectionDescription": "Learn the basics of programming and set up your development environment.",
+        "sectionId": "f86e1151-8032-47f1-ab9b-a2dbdf53d331",
+        "sectionTitle": "Section f86e1151",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
         "chapters": [
           {
-            "chapterId": "a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6",
-            "type": "Video",
-            "title": "Welcome to Programming",
-            "content": "https://example.com/videos/welcome.mp4",
-            "video": "https://example.com/videos/welcome.mp4",
-            "comments": [
-              {
-                "commentId": "1a2b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p",
-                "userId": "emma.wilson@hotmail.com",
-                "text": "Great introduction!",
-                "timestamp": "2023-03-10T09:15:00Z"
-              }
-            ]
-          },
-          {
-            "chapterId": "b2c3d4e5-f6g7-h8i9-j0k1-l2m3n4o5p6q7",
+            "chapterId": "fc73aad1-eb94-49f2-919d-998e110d1c89",
             "type": "Text",
-            "title": "What is Programming?",
-            "content": "Programming is the process of creating instructions for computers to follow...",
-            "comments": []
+            "title": "Text Chapter",
+            "content": "Content for Text chapter fc73aad1-eb94-49f2-919d-998e110d1c89",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
           },
           {
-            "chapterId": "c3d4e5f6-g7h8-i9j0-k1l2-m3n4o5p6q7r8",
-            "type": "Quiz",
-            "title": "Programming Basics Quiz",
-            "content": "1. What is a variable?\n2. What is the difference between a compiler and an interpreter?\n3. Name three popular programming languages.",
-            "comments": []
+            "chapterId": "205768ab-9d42-4083-94a5-ae14d1c4f704",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 205768ab-9d42-4083-94a5-ae14d1c4f704",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "f4127d9b-6d91-454f-a407-12893f2db6ab",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter f4127d9b-6d91-454f-a407-12893f2db6ab",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
           }
         ]
       },
       {
-        "sectionId": "3g0e2f9c-6d4e-5a7f-8b9g-1h2i3j4k5l6m",
-        "sectionTitle": "Basic Programming Concepts",
-        "sectionDescription": "Explore fundamental programming concepts and data types.",
+        "sectionId": "1c3904bf-e19d-4c33-94db-9cc6663b4d6a",
+        "sectionTitle": "Section 1c3904bf",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
         "chapters": [
           {
-            "chapterId": "d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9",
+            "chapterId": "273c008a-c1ec-4f5b-a758-45f532481a77",
             "type": "Video",
-            "title": "Variables and Data Types",
-            "content": "https://example.com/videos/variables-data-types.mp4",
-            "video": "https://example.com/videos/variables-data-types.mp4",
-            "comments": []
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 273c008a-c1ec-4f5b-a758-45f532481a77",
+            "comments": [],
+            "video": "https://example.com/videos/273c008a-c1ec-4f5b-a758-45f532481a77.mp4"
           },
           {
-            "chapterId": "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0",
-            "type": "Text",
-            "title": "Control Structures",
-            "content": "Control structures are fundamental elements in programming that allow you to control the flow of your program...",
-            "comments": []
-          },
-          {
-            "chapterId": "f6g7h8i9-j0k1-l2m3-n4o5-p6q7r8s9t0u1",
+            "chapterId": "a4f87795-9dae-415b-a337-fb20eb4e55c3",
             "type": "Quiz",
-            "title": "Control Structures Quiz",
-            "content": "1. What is an if-else statement?\n2. Explain the purpose of a loop.\n3. What is a switch statement?",
-            "comments": []
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter a4f87795-9dae-415b-a337-fb20eb4e55c3",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "b1ba6373-0cf8-4390-a4ba-9faabeea95c5",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter b1ba6373-0cf8-4390-a4ba-9faabeea95c5",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
           }
         ]
       },
       {
-        "sectionId": "4h1f3g0d-7e5f-6b8g-9c0h-2i3j4k5l6m7n",
-        "sectionTitle": "Functions and Modules",
-        "sectionDescription": "Learn how to organize your code using functions and modules.",
+        "sectionId": "2531c89a-4d2a-4217-9845-fe32a09c758f",
+        "sectionTitle": "Section 2531c89a",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
         "chapters": [
           {
-            "chapterId": "g7h8i9j0-k1l2-m3n4-o5p6-q7r8s9t0u1v2",
-            "type": "Video",
-            "title": "Introduction to Functions",
-            "content": "https://example.com/videos/intro-to-functions.mp4",
-            "video": "https://example.com/videos/intro-to-functions.mp4",
-            "comments": []
-          },
-          {
-            "chapterId": "h8i9j0k1-l2m3-n4o5-p6q7-r8s9t0u1v2w3",
+            "chapterId": "35b16065-86a7-4dd0-94b5-5cbf462870b8",
             "type": "Text",
-            "title": "Creating and Using Modules",
-            "content": "Modules are a way to organize and reuse code across different parts of your program...",
-            "comments": []
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 35b16065-86a7-4dd0-94b5-5cbf462870b8",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
           },
           {
-            "chapterId": "i9j0k1l2-m3n4-o5p6-q7r8-s9t0u1v2w3x4",
+            "chapterId": "cb779fc8-5705-49a4-b890-a9b3de17849c",
             "type": "Quiz",
-            "title": "Functions and Modules Quiz",
-            "content": "1. What is the difference between a function and a method?\n2. How do you import a module in Python?\n3. What is the purpose of the 'return' statement in a function?",
-            "comments": []
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter cb779fc8-5705-49a4-b890-a9b3de17849c",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "b651e186-cc08-4f00-b1c5-a425d55348b1",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter b651e186-cc08-4f00-b1c5-a425d55348b1",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
           }
         ]
       }
     ]
   },
   {
-    "courseId": "8b4f7d9c-4b1c-4b1c-8b4f-7d9c8b4f7d9c",
-    "teacherId": "user_4mNj68RtPvXw2Ky9Qc7HbSdAf",
-    "teacherName": "Alice Johnson",
-    "title": "Advanced Machine Learning",
-    "description": "Dive deep into machine learning algorithms and techniques.",
-    "category": "Artificial Intelligence",
-    "image": "https://images.pexels.com/photos/6303596/pexels-photo-6303596.jpeg",
-    "price": 9999,
-    "level": "Advanced",
-    "status": "Published",
-    "enrollments": [
-      { "userId": "user_2ntu96pUCljUV2T9W0AThzjacQB" },
-      { "userId": "user_5vBn23WsLkMp7Jh4Gt8FxYcRz" }
-    ],
-    "sections": [
-      {
-        "sectionId": "1a7b3c5d-9e2f-4g6h-8i0j-2k4l6m8n0p1q",
-        "sectionTitle": "Neural Networks",
-        "sectionDescription": "Learn about neural networks and their applications.",
-        "chapters": [
-          {
-            "chapterId": "c3d4e5f6-g7h8-i9j0-k1l2-m3n4o5p6q7r8",
-            "type": "Video",
-            "title": "Introduction to Neural Networks",
-            "content": "https://example.com/videos/neural-networks-intro.mp4",
-            "videoLength": 1200,
-            "comments": [],
-            "videoUrl": "https://example.com/videos/neural-networks-intro.mp4",
-            "videoUniqueId": "vid_004",
-            "videoType": "hls"
-          },
-          {
-            "chapterId": "d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9",
-            "type": "Quiz",
-            "title": "Neural Networks Quiz",
-            "content": "1. What is a neuron?\n2. Explain backpropagation.\n3. What is an activation function?",
-            "comments": []
-          },
-          {
-            "chapterId": "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0",
-            "type": "Text",
-            "title": "Types of Neural Networks",
-            "content": "There are various types of neural networks, each designed for specific tasks...",
-            "comments": []
-          }
-        ]
-      },
-      {
-        "sectionId": "2b8c4d6e-0f3g-5h7i-9j1k-3l5m7n9p1q3r",
-        "sectionTitle": "Deep Learning",
-        "sectionDescription": "Explore advanced deep learning techniques and architectures.",
-        "chapters": [
-          {
-            "chapterId": "f6g7h8i9-j0k1-l2m3-n4o5-p6q7r8s9t0u1",
-            "type": "Video",
-            "title": "Convolutional Neural Networks",
-            "content": "https://example.com/videos/cnn-explained.mp4",
-            "videoLength": 1500,
-            "comments": [],
-            "videoUrl": "https://example.com/videos/cnn-explained.mp4",
-            "videoUniqueId": "vid_005",
-            "videoType": "dash"
-          },
-          {
-            "chapterId": "g7h8i9j0-k1l2-m3n4-o5p6-q7r8s9t0u1v2",
-            "type": "Text",
-            "title": "Recurrent Neural Networks",
-            "content": "Recurrent Neural Networks (RNNs) are a class of neural networks designed to work with sequential data...",
-            "comments": []
-          },
-          {
-            "chapterId": "h8i9j0k1-l2m3-n4o5-p6q7-r8s9t0u1v2w3",
-            "type": "Quiz",
-            "title": "Deep Learning Architectures Quiz",
-            "content": "1. What is the main advantage of CNNs?\n2. Explain the vanishing gradient problem in RNNs.\n3. What is transfer learning?",
-            "comments": []
-          }
-        ]
-      },
-      {
-        "sectionId": "3c9d5e7f-1g4h-6i8j-0k2l-4m6n8p0q2r4s",
-        "sectionTitle": "Advanced ML Algorithms",
-        "sectionDescription": "Study cutting-edge machine learning algorithms and their implementations.",
-        "chapters": [
-          {
-            "chapterId": "i9j0k1l2-m3n4-o5p6-q7r8-s9t0u1v2w3x4",
-            "type": "Video",
-            "title": "Generative Adversarial Networks",
-            "content": "https://example.com/videos/gan-explained.mp4",
-            "videoLength": 1800,
-            "comments": [],
-            "videoUrl": "https://example.com/videos/gan-explained.mp4",
-            "videoUniqueId": "vid_006",
-            "videoType": "mp4"
-          },
-          {
-            "chapterId": "j0k1l2m3-n4o5-p6q7-r8s9-t0u1v2w3x4y5",
-            "type": "Text",
-            "title": "Reinforcement Learning",
-            "content": "Reinforcement Learning is a type of machine learning where an agent learns to make decisions by interacting with an environment...",
-            "comments": []
-          },
-          {
-            "chapterId": "k1l2m3n4-o5p6-q7r8-s9t0-u1v2w3x4y5z6",
-            "type": "Quiz",
-            "title": "Advanced ML Algorithms Quiz",
-            "content": "1. What are the components of a GAN?\n2. Explain the difference between Q-learning and policy gradients.\n3. What is the purpose of the discriminator in a GAN?",
-            "comments": []
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "courseId": "c5d6e7f8-g9h0-i1j2-k3l4-m5n6o7p8q9r0",
-    "teacherId": "user_7kFh92JkCpQw3N8M5L4xRzVtYs",
-    "teacherName": "John Doe",
-    "title": "Web Development Fundamentals",
-    "description": "Learn the basics of HTML, CSS, and JavaScript to build modern websites.",
-    "category": "Web Development",
-    "image": "https://images.pexels.com/photos/6001397/pexels-photo-6001397.jpeg",
-    "price": 7999,
+    "courseId": "985263de-ca32-4e3b-86df-e6b2bcfab0b9",
+    "teacherId": "user_2wyDdXnHNHDyWHne8bc282bZsWy",
+    "teacherName": "Ashish Bhusal",
+    "title": "Corporate Communication Best Practices",
+    "description": "A comprehensive course on corporate communication best practices for corporate learning.",
+    "category": "Corporate Success",
+    "image": "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
+    "price": 0,
     "level": "Beginner",
     "status": "Published",
     "enrollments": [
-      { "userId": "user_6tHm89QwNpKj3Fx5Vy2RdLcBs" },
-      { "userId": "user_9xWp45MnKjL8vRt2Hs6BqDcEy" }
+      {
+        "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN"
+      },
+      {
+        "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO"
+      }
     ],
     "sections": [
       {
-        "sectionId": "3e5f7g9h-1i3j-5k7l-9m1n-3o5p7q9r1s3t",
-        "sectionTitle": "HTML Basics",
-        "sectionDescription": "Learn the fundamentals of HTML.",
+        "sectionId": "ef6e2f35-2cc5-4cc9-b6b3-b227dbc7fd09",
+        "sectionTitle": "Section ef6e2f35",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
         "chapters": [
           {
-            "chapterId": "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0",
-            "type": "Video",
-            "title": "Introduction to HTML",
-            "content": "https://example.com/videos/intro-to-html.mp4",
-            "video": "https://example.com/videos/intro-to-html.mp4",
-            "comments": []
-          },
-          {
-            "chapterId": "f6g7h8i9-j0k1-l2m3-n4o5-p6q7r8s9t0u1",
-            "type": "Quiz",
-            "title": "HTML Tags Quiz",
-            "content": "1. What does HTML stand for?\n2. Name three basic HTML tags.\n3. What is the purpose of the <head> tag?",
-            "comments": []
-          },
-          {
-            "chapterId": "g7h8i9j0-k1l2-m3n4-o5p6-q7r8s9t0u1v2",
+            "chapterId": "d0ec6687-f1ff-469e-8b9a-523fd305e927",
             "type": "Text",
-            "title": "HTML Forms and Input Elements",
-            "content": "HTML forms are used to collect user input. Learn about various input types and form elements...",
-            "comments": []
+            "title": "Text Chapter",
+            "content": "Content for Text chapter d0ec6687-f1ff-469e-8b9a-523fd305e927",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "75b11e52-9c0d-43c2-86ef-3a6d5fe1d266",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 75b11e52-9c0d-43c2-86ef-3a6d5fe1d266",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "f9803216-3a76-4a35-ad9d-285d5197e46d",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter f9803216-3a76-4a35-ad9d-285d5197e46d",
+            "comments": [],
+            "video": "https://example.com/videos/f9803216-3a76-4a35-ad9d-285d5197e46d.mp4"
           }
         ]
       },
       {
-        "sectionId": "4f6g8h0i-2j4k-6l8m-0n2p-4q6r8s0t2u4v",
-        "sectionTitle": "CSS Styling",
-        "sectionDescription": "Learn how to style your HTML with CSS.",
+        "sectionId": "984ad97f-a1ff-4850-b6b9-c9b4782922f0",
+        "sectionTitle": "Section 984ad97f",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
         "chapters": [
           {
-            "chapterId": "h8i9j0k1-l2m3-n4o5-p6q7-r8s9t0u1v2w3",
-            "type": "Video",
-            "title": "CSS Basics",
-            "content": "https://example.com/videos/css-basics.mp4",
-            "video": "https://example.com/videos/css-basics.mp4",
-            "comments": []
-          },
-          {
-            "chapterId": "i9j0k1l2-m3n4-o5p6-q7r8-s9t0u1v2w3x4",
-            "type": "Text",
-            "title": "CSS Layout Techniques",
-            "content": "Learn about different CSS layout techniques including Flexbox and Grid...",
-            "comments": []
-          },
-          {
-            "chapterId": "j0k1l2m3-n4o5-p6q7-r8s9-t0u1v2w3x4y5",
+            "chapterId": "6cc5a15d-7a0f-4bb3-a288-8cca341c0ae3",
             "type": "Quiz",
-            "title": "CSS Styling Quiz",
-            "content": "1. What is the box model in CSS?\n2. Explain the difference between inline and block elements.\n3. How do you center an element horizontally and vertically using Flexbox?",
-            "comments": []
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 6cc5a15d-7a0f-4bb3-a288-8cca341c0ae3",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "358497ad-f670-4f79-b114-f571ef2839be",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 358497ad-f670-4f79-b114-f571ef2839be",
+            "comments": [],
+            "video": "https://example.com/videos/358497ad-f670-4f79-b114-f571ef2839be.mp4"
+          },
+          {
+            "chapterId": "76e952cc-35e1-435e-a605-aaa0a72cbd6d",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 76e952cc-35e1-435e-a605-aaa0a72cbd6d",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      },
+      {
+        "sectionId": "ebb346f6-f8bb-4bd0-b4f0-a4651750a012",
+        "sectionTitle": "Section ebb346f6",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "cbe07ad6-e514-4fb8-a061-249f14683d1c",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter cbe07ad6-e514-4fb8-a061-249f14683d1c",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "a208c88f-f92e-4a7d-958f-d0f9885ccfb6",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter a208c88f-f92e-4a7d-958f-d0f9885ccfb6",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "6d8067e2-e174-4b82-8b94-72d301ebe314",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 6d8067e2-e174-4b82-8b94-72d301ebe314",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
           }
         ]
       }
     ]
   },
   {
-    "courseId": "d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9",
-    "teacherId": "user_3rTg67LmZnXc4Vb8Wd0JyUhEq",
-    "teacherName": "Michael Brown",
-    "title": "Data Science Fundamentals",
-    "description": "Learn the basics of data science, including statistics, data visualization, and machine learning.",
-    "category": "Data Science",
-    "image": "https://images.pexels.com/photos/4491461/pexels-photo-4491461.jpeg",
-    "price": 8999,
+    "courseId": "d64f36fb-9080-4e25-8a7a-2425c479a968",
+    "teacherId": "user_2wyDdXnHNHDyWHne8bc282bZsWy",
+    "teacherName": "Ashish Bhusal",
+    "title": "Secure Code Development",
+    "description": "A comprehensive course on secure code development for corporate learning.",
+    "category": "Internal Tools",
+    "image": "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
+    "price": 0,
     "level": "Intermediate",
     "status": "Published",
     "enrollments": [
-      { "userId": "user_6tHm89QwNpKj3Fx5Vy2RdLcBs" },
-      { "userId": "user_9xWp45MnKjL8vRt2Hs6BqDcEy" }
+      {
+        "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO"
+      },
+      {
+        "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO"
+      }
     ],
     "sections": [
       {
-        "sectionId": "4u6v8w0x-2y4z-6a8b-0c2d-4e6f8g0h2i4j",
-        "sectionTitle": "Introduction to Data Science",
-        "sectionDescription": "Learn the basics of data science and its applications.",
+        "sectionId": "dd0158bc-b141-4f82-9d5f-7245f8866d88",
+        "sectionTitle": "Section dd0158bc",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
         "chapters": [
           {
-            "chapterId": "g7h8i9j0-k1l2-m3n4-o5p6-q7r8s9t0u1v2",
-            "type": "Video",
-            "title": "What is Data Science?",
-            "content": "https://example.com/videos/what-is-data-science.mp4",
-            "video": "https://example.com/videos/what-is-data-science.mp4",
-            "comments": []
+            "chapterId": "220fcb9d-a697-4704-9d8c-457b045d067f",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 220fcb9d-a697-4704-9d8c-457b045d067f",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
           },
           {
-            "chapterId": "h8i9j0k1-l2m3-n4o5-p6q7-r8s9t0u1v2w3",
+            "chapterId": "45990d87-60ea-4bb9-81d3-251baa30a585",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 45990d87-60ea-4bb9-81d3-251baa30a585",
+            "comments": [],
+            "video": "https://example.com/videos/45990d87-60ea-4bb9-81d3-251baa30a585.mp4"
+          },
+          {
+            "chapterId": "20c69f24-89a4-4692-831b-37550eb20a7d",
             "type": "Quiz",
-            "title": "Data Science Basics Quiz",
-            "content": "1. Define data science.\n2. What are the main components of data science?\n3. How does machine learning relate to data science?",
-            "comments": []
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 20c69f24-89a4-4692-831b-37550eb20a7d",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      },
+      {
+        "sectionId": "e3608fa6-88e2-4d3a-a4a8-dc34d86c0b1f",
+        "sectionTitle": "Section e3608fa6",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "154daf10-9b89-411a-aeea-d10def93d945",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 154daf10-9b89-411a-aeea-d10def93d945",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "627261ce-9f35-4f36-be51-debcb95bddf7",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 627261ce-9f35-4f36-be51-debcb95bddf7",
+            "comments": [],
+            "video": "https://example.com/videos/627261ce-9f35-4f36-be51-debcb95bddf7.mp4"
+          },
+          {
+            "chapterId": "c55d01e1-dcc7-4bd1-acae-5569289d389e",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter c55d01e1-dcc7-4bd1-acae-5569289d389e",
+            "comments": [],
+            "video": "https://example.com/videos/c55d01e1-dcc7-4bd1-acae-5569289d389e.mp4"
+          }
+        ]
+      },
+      {
+        "sectionId": "5ef8719f-c787-445d-a301-3e31d6c5b00a",
+        "sectionTitle": "Section 5ef8719f",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "636c3d36-1457-4438-9fa2-63a80e95289f",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 636c3d36-1457-4438-9fa2-63a80e95289f",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "ac8b90e2-6151-40a0-892f-d91abff5d6fe",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter ac8b90e2-6151-40a0-892f-d91abff5d6fe",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "c16fd179-b4b8-4af1-846a-ed1beb3b5aa2",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter c16fd179-b4b8-4af1-846a-ed1beb3b5aa2",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
           }
         ]
       }
     ]
   },
   {
-    "courseId": "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0",
-    "teacherId": "user_7kFh92JkCpQw3N8M5L4xRzVtYs",
-    "teacherName": "John Doe",
-    "title": "Mobile App Development with React Native",
-    "description": "Build cross-platform mobile apps using React Native and JavaScript.",
-    "category": "Mobile Development",
-    "image": "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg",
-    "price": 12999,
-    "level": "Advanced",
+    "courseId": "50242028-0c80-4bc5-bee0-cb79b44af484",
+    "teacherId": "user_2wyDdXnHNHDyWHne8bc282bZsWy",
+    "teacherName": "Ashish Bhusal",
+    "title": "Internal Monitoring Tools Training",
+    "description": "A comprehensive course on internal monitoring tools training for corporate learning.",
+    "category": "Architecture Walkthrough",
+    "image": "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg",
+    "price": 0,
+    "level": "Intermediate",
     "status": "Published",
-    "enrollments": [{ "userId": "user_6tHm89QwNpKj3Fx5Vy2RdLcBs" }],
+    "enrollments": [
+      {
+        "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN"
+      },
+      {
+        "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO"
+      }
+    ],
     "sections": [
       {
-        "sectionId": "5k7l9m1n-3o5p-7q9r-1s3t-5u7v9w1x3y5z",
-        "sectionTitle": "Getting Started with React Native",
-        "sectionDescription": "Learn the basics of React Native development.",
+        "sectionId": "531089a3-f320-419b-9aae-9e44e6045f03",
+        "sectionTitle": "Section 531089a3",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
         "chapters": [
           {
-            "chapterId": "i9j0k1l2-m3n4-o5p6-q7r8-s9t0u1v2w3x4",
-            "type": "Video",
-            "title": "Setting Up Your Development Environment",
-            "content": "https://example.com/videos/react-native-setup.mp4",
-            "video": "https://example.com/videos/react-native-setup.mp4",
-            "comments": []
+            "chapterId": "9a6a13a1-b054-4ae8-86a8-a78cfb151ff9",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 9a6a13a1-b054-4ae8-86a8-a78cfb151ff9",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
           },
           {
-            "chapterId": "j0k1l2m3-n4o5-p6q7-r8s9-t0u1v2w3x4y5",
+            "chapterId": "ae187786-5ebf-49a5-9e5a-339eac814588",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter ae187786-5ebf-49a5-9e5a-339eac814588",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "4ba927a5-4f2d-43d5-92d2-c8a52f718726",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 4ba927a5-4f2d-43d5-92d2-c8a52f718726",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      },
+      {
+        "sectionId": "d3205b0e-af7e-478b-8851-0d3cf4a98c03",
+        "sectionTitle": "Section d3205b0e",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "d5fe55cd-b873-4167-aef0-725a4768b49d",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter d5fe55cd-b873-4167-aef0-725a4768b49d",
+            "comments": [],
+            "video": "https://example.com/videos/d5fe55cd-b873-4167-aef0-725a4768b49d.mp4"
+          },
+          {
+            "chapterId": "cff5213d-b7fa-4f52-9b96-dbfc53546b34",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter cff5213d-b7fa-4f52-9b96-dbfc53546b34",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "fb5cda3a-1833-4d66-a5c5-4ace19ecdfb5",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter fb5cda3a-1833-4d66-a5c5-4ace19ecdfb5",
+            "comments": [],
+            "video": "https://example.com/videos/fb5cda3a-1833-4d66-a5c5-4ace19ecdfb5.mp4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseId": "7b0c8152-49a0-4ddc-9de3-2609285b1795",
+    "teacherId": "user_2wyDdXnHNHDyWHne8bc282bZsWy",
+    "teacherName": "Ashish Bhusal",
+    "title": "Mastering the CI/CD Pipeline",
+    "description": "A comprehensive course on mastering the ci/cd pipeline for corporate learning.",
+    "category": "Internal Tools",
+    "image": "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg",
+    "price": 0,
+    "level": "Advanced",
+    "status": "Published",
+    "enrollments": [
+      {
+        "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN"
+      },
+      {
+        "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO"
+      }
+    ],
+    "sections": [
+      {
+        "sectionId": "ffc6a036-3974-4c2d-aa08-15bca05a64c9",
+        "sectionTitle": "Section ffc6a036",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "d38d7e97-0f89-46f6-8afc-0f46f258bb1f",
             "type": "Text",
-            "title": "React Native Basics",
-            "content": "Learn about functions, objects, and other core concepts in JavaScript...",
-            "comments": []
+            "title": "Text Chapter",
+            "content": "Content for Text chapter d38d7e97-0f89-46f6-8afc-0f46f258bb1f",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "74bd1525-e090-479e-a88b-e085640a17e9",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 74bd1525-e090-479e-a88b-e085640a17e9",
+            "comments": [],
+            "video": "https://example.com/videos/74bd1525-e090-479e-a88b-e085640a17e9.mp4"
+          },
+          {
+            "chapterId": "f83c645a-44ee-47d0-8ff2-3c7848e5b6fb",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter f83c645a-44ee-47d0-8ff2-3c7848e5b6fb",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      },
+      {
+        "sectionId": "d928aa91-c88b-48c1-b09d-319914ff304c",
+        "sectionTitle": "Section d928aa91",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "1d92fd6f-fc83-48fa-8351-31aaf0f0e9a6",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 1d92fd6f-fc83-48fa-8351-31aaf0f0e9a6",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "1188eb06-fd21-4e28-a067-e2c7743ed657",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 1188eb06-fd21-4e28-a067-e2c7743ed657",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "51c18dd3-e1ad-4826-ba7e-b1593b2867a6",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 51c18dd3-e1ad-4826-ba7e-b1593b2867a6",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseId": "3d1ed5b7-78df-40db-b322-cfdcb904355b",
+    "teacherId": "user_2wyDdXnHNHDyWHne8bc282bZsWy",
+    "teacherName": "Ashish Bhusal",
+    "title": "API Design and Documentation Standards",
+    "description": "A comprehensive course on api design and documentation standards for corporate learning.",
+    "category": "Engineering Onboarding",
+    "image": "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg",
+    "price": 0,
+    "level": "Beginner",
+    "status": "Draft",
+    "enrollments": [
+      {
+        "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN"
+      },
+      {
+        "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO"
+      }
+    ],
+    "sections": [
+      {
+        "sectionId": "458fbbc1-2179-4ee4-a23b-2bfcd58533a8",
+        "sectionTitle": "Section 458fbbc1",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "f3881a2c-fe3a-4f79-89c2-1e5f206a6929",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter f3881a2c-fe3a-4f79-89c2-1e5f206a6929",
+            "comments": [],
+            "video": "https://example.com/videos/f3881a2c-fe3a-4f79-89c2-1e5f206a6929.mp4"
+          },
+          {
+            "chapterId": "736bade3-37d7-435d-b25a-544644becf0f",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 736bade3-37d7-435d-b25a-544644becf0f",
+            "comments": [],
+            "video": "https://example.com/videos/736bade3-37d7-435d-b25a-544644becf0f.mp4"
+          },
+          {
+            "chapterId": "9c285806-582f-4dbf-b526-0868724278ce",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 9c285806-582f-4dbf-b526-0868724278ce",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      },
+      {
+        "sectionId": "1b0437b5-c49c-4aa4-8391-2bb0b962baa1",
+        "sectionTitle": "Section 1b0437b5",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "e8bc32a0-bdea-46e0-8d71-3da774578221",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter e8bc32a0-bdea-46e0-8d71-3da774578221",
+            "comments": [],
+            "video": "https://example.com/videos/e8bc32a0-bdea-46e0-8d71-3da774578221.mp4"
+          },
+          {
+            "chapterId": "72714037-6bb3-4ad2-b96b-896338a09092",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 72714037-6bb3-4ad2-b96b-896338a09092",
+            "comments": [],
+            "video": "https://example.com/videos/72714037-6bb3-4ad2-b96b-896338a09092.mp4"
+          },
+          {
+            "chapterId": "3794edb8-c768-4c6b-9ba5-a2a0920a7916",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 3794edb8-c768-4c6b-9ba5-a2a0920a7916",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      },
+      {
+        "sectionId": "1d9ee43f-ef29-4f3e-8e20-e130e4770d7e",
+        "sectionTitle": "Section 1d9ee43f",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "cd32e58b-7e0a-4275-8e59-8519dc0e7fe9",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter cd32e58b-7e0a-4275-8e59-8519dc0e7fe9",
+            "comments": [],
+            "video": "https://example.com/videos/cd32e58b-7e0a-4275-8e59-8519dc0e7fe9.mp4"
+          },
+          {
+            "chapterId": "6d26b968-7cd2-4cb9-9a5a-f7a0ac64d6bd",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 6d26b968-7cd2-4cb9-9a5a-f7a0ac64d6bd",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "d43d57f1-3b4e-467a-b3de-dd203c28b097",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter d43d57f1-3b4e-467a-b3de-dd203c28b097",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseId": "996a605f-019f-409f-8138-22e5c8daf0ed",
+    "teacherId": "user_2wyDdXnHNHDyWHne8bc282bZsWy",
+    "teacherName": "Ashish Bhusal",
+    "title": "Data Privacy and Compliance",
+    "description": "A comprehensive course on data privacy and compliance for corporate learning.",
+    "category": "Architecture Walkthrough",
+    "image": "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg",
+    "price": 0,
+    "level": "Intermediate",
+    "status": "Draft",
+    "enrollments": [
+      {
+        "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN"
+      },
+      {
+        "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO"
+      }
+    ],
+    "sections": [
+      {
+        "sectionId": "22942750-ff27-4506-8ef3-443f95da0b48",
+        "sectionTitle": "Section 22942750",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "64dc753b-3182-4107-ac7f-15744814e4bf",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 64dc753b-3182-4107-ac7f-15744814e4bf",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "c110268a-c5a3-4803-ac69-226a623a3cab",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter c110268a-c5a3-4803-ac69-226a623a3cab",
+            "comments": [],
+            "video": "https://example.com/videos/c110268a-c5a3-4803-ac69-226a623a3cab.mp4"
+          },
+          {
+            "chapterId": "4afc7a99-6b6d-4a09-b277-ff8cc992babb",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 4afc7a99-6b6d-4a09-b277-ff8cc992babb",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      },
+      {
+        "sectionId": "a78dedc0-eee0-4948-abae-193acde220f7",
+        "sectionTitle": "Section a78dedc0",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "0258c270-4db9-4030-af17-ff3c40e4bd60",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 0258c270-4db9-4030-af17-ff3c40e4bd60",
+            "comments": [],
+            "video": "https://example.com/videos/0258c270-4db9-4030-af17-ff3c40e4bd60.mp4"
+          },
+          {
+            "chapterId": "da421a4f-1e30-495a-8ddd-5f6eecb6f605",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter da421a4f-1e30-495a-8ddd-5f6eecb6f605",
+            "comments": [],
+            "video": "https://example.com/videos/da421a4f-1e30-495a-8ddd-5f6eecb6f605.mp4"
+          },
+          {
+            "chapterId": "07c96805-0d5e-4f2f-a4f2-d76016866692",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 07c96805-0d5e-4f2f-a4f2-d76016866692",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseId": "85971022-521f-42e9-956e-85dff80b47c0",
+    "teacherId": "user_2wyDdXnHNHDyWHne8bc282bZsWy",
+    "teacherName": "Ashish Bhusal",
+    "title": "Handling Service Outages Effectively",
+    "description": "A comprehensive course on handling service outages effectively for corporate learning.",
+    "category": "Internal Tools",
+    "image": "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg",
+    "price": 0,
+    "level": "Intermediate",
+    "status": "Published",
+    "enrollments": [
+      {
+        "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN"
+      }
+    ],
+    "sections": [
+      {
+        "sectionId": "c3641b5c-4bea-4f30-a88e-264375c5cb00",
+        "sectionTitle": "Section c3641b5c",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "ac97d696-0614-4f7b-b865-5de960a425c6",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter ac97d696-0614-4f7b-b865-5de960a425c6",
+            "comments": [],
+            "video": "https://example.com/videos/ac97d696-0614-4f7b-b865-5de960a425c6.mp4"
+          },
+          {
+            "chapterId": "2c5833af-5563-4040-ba81-fed54113f2a9",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 2c5833af-5563-4040-ba81-fed54113f2a9",
+            "comments": [],
+            "video": "https://example.com/videos/2c5833af-5563-4040-ba81-fed54113f2a9.mp4"
+          },
+          {
+            "chapterId": "d50beaf7-d8b3-4730-a44a-79b81ef89717",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter d50beaf7-d8b3-4730-a44a-79b81ef89717",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      },
+      {
+        "sectionId": "6c524b27-f376-4e5c-98a1-a0e993a7b13e",
+        "sectionTitle": "Section 6c524b27",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "2006d7d9-256c-43b3-91c7-c96be80f3a0c",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 2006d7d9-256c-43b3-91c7-c96be80f3a0c",
+            "comments": [],
+            "video": "https://example.com/videos/2006d7d9-256c-43b3-91c7-c96be80f3a0c.mp4"
+          },
+          {
+            "chapterId": "a89fff26-7de8-4e61-9808-2771432a43e8",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter a89fff26-7de8-4e61-9808-2771432a43e8",
+            "comments": [],
+            "video": "https://example.com/videos/a89fff26-7de8-4e61-9808-2771432a43e8.mp4"
+          },
+          {
+            "chapterId": "e991492f-3b5c-4837-8d9c-69bb5a7c4ffd",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter e991492f-3b5c-4837-8d9c-69bb5a7c4ffd",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      },
+      {
+        "sectionId": "26e937cf-4f8c-49b8-a81e-92b61c273e8d",
+        "sectionTitle": "Section 26e937cf",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "aed73cab-df8a-46bd-bca6-e34001afedc6",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter aed73cab-df8a-46bd-bca6-e34001afedc6",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "dee06564-d841-4048-99f7-9a7d83890f11",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter dee06564-d841-4048-99f7-9a7d83890f11",
+            "comments": [],
+            "video": "https://example.com/videos/dee06564-d841-4048-99f7-9a7d83890f11.mp4"
+          },
+          {
+            "chapterId": "0d8e1dcf-ce70-4160-89f1-84baa27b972a",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 0d8e1dcf-ce70-4160-89f1-84baa27b972a",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseId": "c01dffed-e670-4c2d-8023-6a76572af8d1",
+    "teacherId": "user_2wyDdXnHNHDyWHne8bc282bZsWy",
+    "teacherName": "Ashish Bhusal",
+    "title": "Scaling Services in Production",
+    "description": "A comprehensive course on scaling services in production for corporate learning.",
+    "category": "Corporate Success",
+    "image": "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg",
+    "price": 0,
+    "level": "Beginner",
+    "status": "Published",
+    "enrollments": [
+      {
+        "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN"
+      }
+    ],
+    "sections": [
+      {
+        "sectionId": "b320a374-4ea2-4f06-91ba-f7e8f51bd6e6",
+        "sectionTitle": "Section b320a374",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "8703d593-45ce-4778-8015-750bb6d3c29d",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 8703d593-45ce-4778-8015-750bb6d3c29d",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "dbcfed90-14fc-40be-b895-512041372e00",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter dbcfed90-14fc-40be-b895-512041372e00",
+            "comments": [],
+            "video": "https://example.com/videos/dbcfed90-14fc-40be-b895-512041372e00.mp4"
+          },
+          {
+            "chapterId": "48069e7a-efef-47a0-867f-1dcbe99b7de7",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 48069e7a-efef-47a0-867f-1dcbe99b7de7",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      },
+      {
+        "sectionId": "390118a6-773d-4489-8d13-753046e23645",
+        "sectionTitle": "Section 390118a6",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "fa43e93a-be0c-45ab-a0db-7b56fd84e983",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter fa43e93a-be0c-45ab-a0db-7b56fd84e983",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "362f5986-7f2f-4f80-95e6-b95751796a99",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 362f5986-7f2f-4f80-95e6-b95751796a99",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "15c00c9f-1309-4cb4-a694-b2f81c79dc28",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 15c00c9f-1309-4cb4-a694-b2f81c79dc28",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      },
+      {
+        "sectionId": "456cf791-9652-4562-83b9-ed3c0bf4c10d",
+        "sectionTitle": "Section 456cf791",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "d7469b15-68b9-48ad-912a-465a02129e31",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter d7469b15-68b9-48ad-912a-465a02129e31",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "4364fd70-2486-4079-9298-7a215ee14504",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 4364fd70-2486-4079-9298-7a215ee14504",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "04317f2a-fcc4-4e44-9c7e-5350215e9bfd",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 04317f2a-fcc4-4e44-9c7e-5350215e9bfd",
+            "comments": [],
+            "video": "https://example.com/videos/04317f2a-fcc4-4e44-9c7e-5350215e9bfd.mp4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseId": "39433106-d84c-4b7d-9300-89f430feb432",
+    "teacherId": "user_2wyDdXnHNHDyWHne8bc282bZsWy",
+    "teacherName": "Ashish Bhusal",
+    "title": "Internal Dashboard User Guide",
+    "description": "A comprehensive course on internal dashboard user guide for corporate learning.",
+    "category": "Internal Tools",
+    "image": "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg",
+    "price": 0,
+    "level": "Intermediate",
+    "status": "Published",
+    "enrollments": [
+      {
+        "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO"
+      }
+    ],
+    "sections": [
+      {
+        "sectionId": "460fd405-3931-4d7a-94c5-0b27c56bd692",
+        "sectionTitle": "Section 460fd405",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "6fd30f81-75fd-4f36-9e61-858d83f6f759",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 6fd30f81-75fd-4f36-9e61-858d83f6f759",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "0177a89d-4634-49b0-92f6-464e5da9139c",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 0177a89d-4634-49b0-92f6-464e5da9139c",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "615fae16-3c3c-4437-87fe-35b7326c214e",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 615fae16-3c3c-4437-87fe-35b7326c214e",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      },
+      {
+        "sectionId": "bf11ceb0-050b-4c69-b139-5ba7fcd64b0d",
+        "sectionTitle": "Section bf11ceb0",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "55b94b1f-30d9-4fde-85c2-91b0b8b5441f",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 55b94b1f-30d9-4fde-85c2-91b0b8b5441f",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "51f34809-447f-4adf-8f9c-2544d1e35017",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 51f34809-447f-4adf-8f9c-2544d1e35017",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "770f10d8-ddad-4d08-8720-1c4bb4cdf747",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 770f10d8-ddad-4d08-8720-1c4bb4cdf747",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      },
+      {
+        "sectionId": "0cad39bd-d871-4265-817e-f3c502455c7a",
+        "sectionTitle": "Section 0cad39bd",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "3748dc26-235f-4389-bb7f-c6ac7b783d42",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 3748dc26-235f-4389-bb7f-c6ac7b783d42",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "aa8f5245-654f-4f64-8f4e-3c5cae2526be",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter aa8f5245-654f-4f64-8f4e-3c5cae2526be",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "a8fbf82f-ae78-4053-b961-9a27fe37e44e",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter a8fbf82f-ae78-4053-b961-9a27fe37e44e",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseId": "c73053e1-4028-41d4-9cc6-c0f7a6fcad46",
+    "teacherId": "user_2wyDdXnHNHDyWHne8bc282bZsWy",
+    "teacherName": "Ashish Bhusal",
+    "title": "Kubernetes Deployment Deep Dive",
+    "description": "A comprehensive course on kubernetes deployment deep dive for corporate learning.",
+    "category": "Engineering Onboarding",
+    "image": "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg",
+    "price": 0,
+    "level": "Intermediate",
+    "status": "Published",
+    "enrollments": [
+      {
+        "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN"
+      }
+    ],
+    "sections": [
+      {
+        "sectionId": "f8d26ddc-ee66-47fd-adc9-dc4bdb476ece",
+        "sectionTitle": "Section f8d26ddc",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "e69832db-04c5-458d-82ab-81ded25c66c8",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter e69832db-04c5-458d-82ab-81ded25c66c8",
+            "comments": [],
+            "video": "https://example.com/videos/e69832db-04c5-458d-82ab-81ded25c66c8.mp4"
+          },
+          {
+            "chapterId": "c52875de-1e78-42a9-90ff-3b56e19b124a",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter c52875de-1e78-42a9-90ff-3b56e19b124a",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "73859566-12e6-475c-a915-a5f14ae84569",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 73859566-12e6-475c-a915-a5f14ae84569",
+            "comments": [],
+            "video": "https://example.com/videos/73859566-12e6-475c-a915-a5f14ae84569.mp4"
+          }
+        ]
+      },
+      {
+        "sectionId": "4035ce1f-97d2-4306-a395-9e6cf0b18fe9",
+        "sectionTitle": "Section 4035ce1f",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "ba5c8c20-5f4f-4ea0-842e-830c3e30f73e",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter ba5c8c20-5f4f-4ea0-842e-830c3e30f73e",
+            "comments": [],
+            "video": "https://example.com/videos/ba5c8c20-5f4f-4ea0-842e-830c3e30f73e.mp4"
+          },
+          {
+            "chapterId": "3636929d-55e2-462b-88a0-fc77517acddf",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 3636929d-55e2-462b-88a0-fc77517acddf",
+            "comments": [],
+            "video": "https://example.com/videos/3636929d-55e2-462b-88a0-fc77517acddf.mp4"
+          },
+          {
+            "chapterId": "46ac4f7a-f801-4933-bfc0-28189f92449d",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 46ac4f7a-f801-4933-bfc0-28189f92449d",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseId": "8dd9c580-274b-4783-95a9-ddef8063734d",
+    "teacherId": "user_2wyDdXnHNHDyWHne8bc282bZsWy",
+    "teacherName": "Ashish Bhusal",
+    "title": "Building Reliable Distributed Systems",
+    "description": "A comprehensive course on building reliable distributed systems for corporate learning.",
+    "category": "Corporate Success",
+    "image": "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg",
+    "price": 0,
+    "level": "Beginner",
+    "status": "Published",
+    "enrollments": [
+      {
+        "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN"
+      }
+    ],
+    "sections": [
+      {
+        "sectionId": "7d0db97a-6904-4b80-92f8-d31afb181b80",
+        "sectionTitle": "Section 7d0db97a",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "88ed617a-323e-45cf-aca0-1088b98c0ed0",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 88ed617a-323e-45cf-aca0-1088b98c0ed0",
+            "comments": [],
+            "video": "https://example.com/videos/88ed617a-323e-45cf-aca0-1088b98c0ed0.mp4"
+          },
+          {
+            "chapterId": "e220bc4e-82ca-47a8-b70e-265f5d4f9596",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter e220bc4e-82ca-47a8-b70e-265f5d4f9596",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "125dae8e-ae86-427c-8612-2e9f49d6bd6a",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 125dae8e-ae86-427c-8612-2e9f49d6bd6a",
+            "comments": [],
+            "video": "https://example.com/videos/125dae8e-ae86-427c-8612-2e9f49d6bd6a.mp4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseId": "660bf99f-6311-428c-bec3-3fe040818145",
+    "teacherId": "user_2wyDdXnHNHDyWHne8bc282bZsWy",
+    "teacherName": "Ashish Bhusal",
+    "title": "Success Strategies for New Engineers",
+    "description": "A comprehensive course on success strategies for new engineers for corporate learning.",
+    "category": "Corporate Success",
+    "image": "https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg",
+    "price": 0,
+    "level": "Intermediate",
+    "status": "Draft",
+    "enrollments": [
+      {
+        "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN"
+      },
+      {
+        "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN"
+      }
+    ],
+    "sections": [
+      {
+        "sectionId": "576e2589-c183-4877-931b-0a59cc158468",
+        "sectionTitle": "Section 576e2589",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "716e48e0-af0b-467b-a5bd-5907c12c3de7",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 716e48e0-af0b-467b-a5bd-5907c12c3de7",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "6a187244-84e2-47ff-b9bb-38e1a9215cb1",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 6a187244-84e2-47ff-b9bb-38e1a9215cb1",
+            "comments": [],
+            "video": "https://example.com/videos/6a187244-84e2-47ff-b9bb-38e1a9215cb1.mp4"
+          },
+          {
+            "chapterId": "76757a6e-14ad-4685-87f3-281d7c9b31db",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 76757a6e-14ad-4685-87f3-281d7c9b31db",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      },
+      {
+        "sectionId": "ce4a07e1-e5de-4e5a-9982-b3d803c793f1",
+        "sectionTitle": "Section ce4a07e1",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "93e563dd-b412-4d48-95e3-5c68e3204198",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 93e563dd-b412-4d48-95e3-5c68e3204198",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "146039ee-001d-487f-a530-0492b8e2715e",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 146039ee-001d-487f-a530-0492b8e2715e",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "d01806d7-5def-4e90-a957-f9bad217e060",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter d01806d7-5def-4e90-a957-f9bad217e060",
+            "comments": [],
+            "video": "https://example.com/videos/d01806d7-5def-4e90-a957-f9bad217e060.mp4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseId": "fc0d8fa3-0cfe-4a55-a62d-29f9d9bb775f",
+    "teacherId": "user_2wyDdXnHNHDyWHne8bc282bZsWy",
+    "teacherName": "Ashish Bhusal",
+    "title": "Debugging and Incident Management",
+    "description": "A comprehensive course on debugging and incident management for corporate learning.",
+    "category": "Architecture Walkthrough",
+    "image": "https://images.pexels.com/photos/1181623/pexels-photo-1181623.jpeg",
+    "price": 0,
+    "level": "Intermediate",
+    "status": "Draft",
+    "enrollments": [
+      {
+        "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO"
+      },
+      {
+        "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO"
+      }
+    ],
+    "sections": [
+      {
+        "sectionId": "ca827089-d1b6-45d1-a74c-535bffea54b6",
+        "sectionTitle": "Section ca827089",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "ada13e20-f9fd-41ef-95b4-daf8b0e0ebc9",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter ada13e20-f9fd-41ef-95b4-daf8b0e0ebc9",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "0d7590ea-53f4-4cfe-bae9-fda56cc91711",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 0d7590ea-53f4-4cfe-bae9-fda56cc91711",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "5a7bc986-1763-48dc-a035-4f891a1c34aa",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 5a7bc986-1763-48dc-a035-4f891a1c34aa",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseId": "c2736e00-674f-4000-a290-e72922f01cd4",
+    "teacherId": "user_2wyDdXnHNHDyWHne8bc282bZsWy",
+    "teacherName": "Ashish Bhusal",
+    "title": "Advanced Git and Repository Management",
+    "description": "A comprehensive course on advanced git and repository management for corporate learning.",
+    "category": "Engineering Onboarding",
+    "image": "https://images.pexels.com/photos/1181623/pexels-photo-1181623.jpeg",
+    "price": 0,
+    "level": "Intermediate",
+    "status": "Draft",
+    "enrollments": [
+      {
+        "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN"
+      },
+      {
+        "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO"
+      }
+    ],
+    "sections": [
+      {
+        "sectionId": "e4541de1-a999-445c-9f68-104305f7fca2",
+        "sectionTitle": "Section e4541de1",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "47548c92-6325-4497-a1e6-4d0992fea59e",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 47548c92-6325-4497-a1e6-4d0992fea59e",
+            "comments": [],
+            "video": "https://example.com/videos/47548c92-6325-4497-a1e6-4d0992fea59e.mp4"
+          },
+          {
+            "chapterId": "553fbeb4-94e8-4c42-8986-51530556cb33",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 553fbeb4-94e8-4c42-8986-51530556cb33",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "96a7b583-ad48-4f32-a82e-f06ad6465ced",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 96a7b583-ad48-4f32-a82e-f06ad6465ced",
+            "comments": [],
+            "video": "https://example.com/videos/96a7b583-ad48-4f32-a82e-f06ad6465ced.mp4"
+          }
+        ]
+      },
+      {
+        "sectionId": "cde66c28-951e-46d8-99dc-ef76dd251549",
+        "sectionTitle": "Section cde66c28",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "610b6bf0-1797-4b73-b77c-09ab178c0d54",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 610b6bf0-1797-4b73-b77c-09ab178c0d54",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "3751889e-87b4-45c8-b49a-7151e656c32e",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 3751889e-87b4-45c8-b49a-7151e656c32e",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "60cece6a-d138-40c5-94b0-98ef513f26c2",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 60cece6a-d138-40c5-94b0-98ef513f26c2",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      },
+      {
+        "sectionId": "b08a41e6-c463-4115-abc0-8ba7819d8ab0",
+        "sectionTitle": "Section b08a41e6",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "b44ac1b3-c1b8-45f9-b8e3-a4f4ef4e335f",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter b44ac1b3-c1b8-45f9-b8e3-a4f4ef4e335f",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "966281a0-816a-4547-8fb7-1806275d1613",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 966281a0-816a-4547-8fb7-1806275d1613",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "1cafbcf8-7334-4a6e-aa65-497fcc5e4963",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 1cafbcf8-7334-4a6e-aa65-497fcc5e4963",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseId": "546461ff-64a7-4ce0-a1de-ad75fd3a9fea",
+    "teacherId": "user_2wyDdXnHNHDyWHne8bc282bZsWy",
+    "teacherName": "Ashish Bhusal",
+    "title": "Cross-Team Collaboration Skills",
+    "description": "A comprehensive course on cross-team collaboration skills for corporate learning.",
+    "category": "Engineering Onboarding",
+    "image": "https://images.pexels.com/photos/1181623/pexels-photo-1181623.jpeg",
+    "price": 0,
+    "level": "Advanced",
+    "status": "Published",
+    "enrollments": [
+      {
+        "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN"
+      },
+      {
+        "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN"
+      }
+    ],
+    "sections": [
+      {
+        "sectionId": "20734a25-46ab-4b32-8530-d18fa46d6785",
+        "sectionTitle": "Section 20734a25",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "349fb22e-bb12-4f86-9402-effd52d4145a",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 349fb22e-bb12-4f86-9402-effd52d4145a",
+            "comments": [],
+            "video": "https://example.com/videos/349fb22e-bb12-4f86-9402-effd52d4145a.mp4"
+          },
+          {
+            "chapterId": "2fa4e3d7-7130-4949-a6f5-276463b89c7a",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 2fa4e3d7-7130-4949-a6f5-276463b89c7a",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "47694365-e8f5-4364-8f14-e40a1f5d674f",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 47694365-e8f5-4364-8f14-e40a1f5d674f",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseId": "d9881da3-9b6c-4b2c-9f7f-2b15c30b4d5c",
+    "teacherId": "user_2wyDdXnHNHDyWHne8bc282bZsWy",
+    "teacherName": "Ashish Bhusal",
+    "title": "Secure Authentication & Authorization",
+    "description": "A comprehensive course on secure authentication & authorization for corporate learning.",
+    "category": "Engineering Onboarding",
+    "image": "https://images.pexels.com/photos/8761520/pexels-photo-8761520.jpeg",
+    "price": 0,
+    "level": "Advanced",
+    "status": "Published",
+    "enrollments": [
+      {
+        "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO"
+      }
+    ],
+    "sections": [
+      {
+        "sectionId": "17957179-8c59-4e7e-9152-d62675c3cd66",
+        "sectionTitle": "Section 17957179",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "f839133f-64f5-44ba-a32c-20c83c3a5b2b",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter f839133f-64f5-44ba-a32c-20c83c3a5b2b",
+            "comments": [],
+            "video": "https://example.com/videos/f839133f-64f5-44ba-a32c-20c83c3a5b2b.mp4"
+          },
+          {
+            "chapterId": "7113fa03-a863-49af-b881-7c7dec914994",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 7113fa03-a863-49af-b881-7c7dec914994",
+            "comments": [],
+            "video": "https://example.com/videos/7113fa03-a863-49af-b881-7c7dec914994.mp4"
+          },
+          {
+            "chapterId": "22a5e872-c87a-47a4-8740-8651f03e909b",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 22a5e872-c87a-47a4-8740-8651f03e909b",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      },
+      {
+        "sectionId": "58fb9818-955f-494b-8bbf-45ef2b2db1a6",
+        "sectionTitle": "Section 58fb9818",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "3f47c081-0944-475a-861a-b08a2fd7e343",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 3f47c081-0944-475a-861a-b08a2fd7e343",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "be0302ed-a2dc-47f5-9ac5-bde1f9a55db6",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter be0302ed-a2dc-47f5-9ac5-bde1f9a55db6",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "421d31c3-7f06-435b-b274-50b3e45833d0",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 421d31c3-7f06-435b-b274-50b3e45833d0",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "courseId": "22b94ed6-a1a9-424b-a5ff-718adab5d5b7",
+    "teacherId": "user_2wyDdXnHNHDyWHne8bc282bZsWy",
+    "teacherName": "Ashish Bhusal",
+    "title": "Service Mesh and Traffic Management",
+    "description": "A comprehensive course on service mesh and traffic management for corporate learning.",
+    "category": "Engineering Onboarding",
+    "image": "https://images.pexels.com/photos/8761520/pexels-photo-8761520.jpeg",
+    "price": 0,
+    "level": "Advanced",
+    "status": "Draft",
+    "enrollments": [
+      {
+        "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN"
+      },
+      {
+        "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO"
+      }
+    ],
+    "sections": [
+      {
+        "sectionId": "ea187150-373c-4f02-9fb4-54d06429c0a6",
+        "sectionTitle": "Section ea187150",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "0bcb579a-60e1-468a-8105-aecbda1f9658",
+            "type": "Text",
+            "title": "Text Chapter",
+            "content": "Content for Text chapter 0bcb579a-60e1-468a-8105-aecbda1f9658",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "b8ebbfb9-704e-455a-a68a-199008dcf6d8",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter b8ebbfb9-704e-455a-a68a-199008dcf6d8",
+            "comments": [],
+            "video": "https://example.com/videos/b8ebbfb9-704e-455a-a68a-199008dcf6d8.mp4"
+          },
+          {
+            "chapterId": "b52fa396-9dea-406a-8a57-847193ce2314",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter b52fa396-9dea-406a-8a57-847193ce2314",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          }
+        ]
+      },
+      {
+        "sectionId": "77fdcbf7-ed31-4ec4-a6dc-fd56089897f2",
+        "sectionTitle": "Section 77fdcbf7",
+        "sectionDescription": "Overview of the section objectives and outcomes.",
+        "chapters": [
+          {
+            "chapterId": "ba7fc60e-b4f9-4e54-ae86-e191c345c7cd",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter ba7fc60e-b4f9-4e54-ae86-e191c345c7cd",
+            "comments": [],
+            "video": "https://example.com/videos/ba7fc60e-b4f9-4e54-ae86-e191c345c7cd.mp4"
+          },
+          {
+            "chapterId": "8d95c6ea-8393-42ad-a8fd-eac5c629863c",
+            "type": "Quiz",
+            "title": "Quiz Chapter",
+            "content": "Content for Quiz chapter 8d95c6ea-8393-42ad-a8fd-eac5c629863c",
+            "comments": [],
+            "video": "https://www.youtube.com/watch?v=F2FmTdLtb_4"
+          },
+          {
+            "chapterId": "7a4a370b-d672-45a8-95bf-f98c271846aa",
+            "type": "Video",
+            "title": "Video Chapter",
+            "content": "Content for Video chapter 7a4a370b-d672-45a8-95bf-f98c271846aa",
+            "comments": [],
+            "video": "https://example.com/videos/7a4a370b-d672-45a8-95bf-f98c271846aa.mp4"
           }
         ]
       }

@@ -26,6 +26,17 @@ provider:
         - Content-Type
         - Authorization
 
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:*
+      Resource: arn:aws:dynamodb:${self:provider.region}:*:table/*
+
+package:
+  include:
+    - src/seed/data/**
+
+
 functions:
   api:
     handler: handler.handler
@@ -33,6 +44,9 @@ functions:
       - httpApi:
           path: /{proxy+}
           method: any
+  # Seeding function to populate the database
+  seed:
+    handler: src/seed.handler
 
 plugins:
   - serverless-offline

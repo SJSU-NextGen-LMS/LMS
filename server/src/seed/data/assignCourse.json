@@ -1,0 +1,362 @@
+[
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "c7dfea59-a1e7-4edd-aa84-5497f5abda5f",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Assigned"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "c7dfea59-a1e7-4edd-aa84-5497f5abda5f",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Assigned"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "92fb9dfb-0727-40fa-b79b-f2606c6df9c0",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Assigned"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "92fb9dfb-0727-40fa-b79b-f2606c6df9c0",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Assigned"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "6e0e14b3-9b2c-4b3b-ac68-52a9c7b1e33c",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "6e0e14b3-9b2c-4b3b-ac68-52a9c7b1e33c",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "d7e87a29-89f2-43b8-b3e1-662b6024aa79",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "d7e87a29-89f2-43b8-b3e1-662b6024aa79",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "ccb4a140-6a7e-454f-b874-a191d0b9f456",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "ccb4a140-6a7e-454f-b874-a191d0b9f456",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Assigned"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "723d714c-b2ef-417e-94b2-c21222ee7d8c",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "723d714c-b2ef-417e-94b2-c21222ee7d8c",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Assigned"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "82a15f97-9083-4e51-99d4-0f048018056b",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "82a15f97-9083-4e51-99d4-0f048018056b",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "eb2e0b66-c1e8-4b8b-bd3f-37be8ab93d3a",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "eb2e0b66-c1e8-4b8b-bd3f-37be8ab93d3a",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "51fa0cf0-0617-4c34-ad34-070931d5ec1f",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "51fa0cf0-0617-4c34-ad34-070931d5ec1f",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Assigned"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "65c21983-6cdd-4b4c-891e-2c64c861040a",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "65c21983-6cdd-4b4c-891e-2c64c861040a",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Assigned"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "d3292d0f-a80c-4f5c-b94b-b4c6f3ebcf7a",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Assigned"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "d3292d0f-a80c-4f5c-b94b-b4c6f3ebcf7a",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "577985c2-fbdd-44e3-8bd2-166550251a74",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "577985c2-fbdd-44e3-8bd2-166550251a74",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "c283a0e7-613f-49c0-9812-2cb19f618c35",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "c283a0e7-613f-49c0-9812-2cb19f618c35",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "22805f4f-6860-41b1-b0b9-6ac317b24e18",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "22805f4f-6860-41b1-b0b9-6ac317b24e18",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "b033948b-fdcd-4028-929b-2eac8ee96e85",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Assigned"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "b033948b-fdcd-4028-929b-2eac8ee96e85",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Assigned"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "c38fb320-e849-4ddf-a32c-ad0e355994de",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "c38fb320-e849-4ddf-a32c-ad0e355994de",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Assigned"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "5f82c3a8-9aa9-4cf6-9ab2-3b14261eefc3",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Assigned"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "5f82c3a8-9aa9-4cf6-9ab2-3b14261eefc3",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Assigned"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "8f4dbd2b-a72c-45b5-8e3c-d6ad946184f3",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "8f4dbd2b-a72c-45b5-8e3c-d6ad946184f3",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Assigned"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "806216bc-29c8-45a2-8d37-0ee42bd49de2",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Assigned"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "806216bc-29c8-45a2-8d37-0ee42bd49de2",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Assigned"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "54e98955-d850-450a-92cd-9b4e1bd63578",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Enrolled"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "54e98955-d850-450a-92cd-9b4e1bd63578",
+    "managerId": "user_2wy2tumfmvYNqyJESpvWnxXKh38",
+    "managerName": "Gabriel Mick Clarence",
+    "note": "Please complete this course by the due date.",
+    "dueDate": 1715472000000,
+    "status": "Assigned"
+  }
+]

@@ -11,13 +11,15 @@ import Transaction from "../models/transactionModel";
 import Course from "../models/courseModel";
 import UserCourseProgress from "../models/userCourseProgressModel";
 import dotenv from "dotenv";
+import AssignCourse from "../models/assignCourseModel";
 
 dotenv.config();
 let client: DynamoDBClient;
 
 /* DynamoDB Configuration */
-const isProduction = process.env.NODE_ENV === "production";
+// const isProduction = process.env.NODE_ENV === "production";
 
+const isProduction = true;
 if (!isProduction) {
   dynamoose.aws.ddb.local();
   client = new DynamoDBClient({
@@ -45,7 +47,7 @@ console.warn = (message, ...args) => {
 };
 
 async function createTables() {
-  const models = [Transaction, UserCourseProgress, Course];
+  const models = [Transaction, AssignCourse, UserCourseProgress, Course];
 
   for (const model of models) {
     const tableName = model.name;
@@ -59,13 +61,9 @@ async function createTables() {
     try {
       await new Promise((resolve) => setTimeout(resolve, 2000));
       await table.initialize();
-      console.log(`Table created and initialized: ${tableName}`);
+      console.log(`Table initialized (created if missing): ${tableName}`);
     } catch (error: any) {
-      console.error(
-        `Error creating table ${tableName}:`,
-        error.message,
-        error.stack
-      );
+      console.error(`Error initializing table ${tableName}:`, error.message);
     }
   }
 }

@@ -1,116 +1,405 @@
 [
   {
-    "userId": "user_2ntu96pUCljUV2T9W0AThzjacQB",
-    "courseId": "3a9f3d6c-c391-4b1c-9c3d-6c3f3d6c3f3d",
-    "enrollmentDate": "2023-03-01T09:00:00Z",
-    "overallProgress": 0.75,
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "course_13",
+    "enrollmentDate": "2025-05-12T00:18:12.640522Z",
+    "overallProgress": 60,
+    "status": "in_progress",
     "sections": [
       {
-        "sectionId": "2f9d1e8b-5a3c-4b7f-9e6d-8c2a1f0b3d5e",
+        "sectionId": "ee8d107b-3a51-41f5-a019-6cd582a44384",
         "chapters": [
           {
-            "chapterId": "a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6",
+            "chapterId": "40a7a3e4-a2df-4a95-ab0f-4ca9a23f24f9",
             "completed": true
           },
           {
-            "chapterId": "b2c3d4e5-f6g7-h8i9-j0k1-l2m3n4o5p6q7",
+            "chapterId": "3d9e3ebd-1b38-4877-9bf2-95e697404978",
+            "completed": true
+          }
+        ]
+      },
+      {
+        "sectionId": "75f840ea-ec2d-4d74-9a38-b4063eb82abe",
+        "chapters": [
+          {
+            "chapterId": "204ffa95-3f29-45a4-ba8a-4934c62bf6ba",
+            "completed": true
+          }
+        ]
+      }
+    ],
+    "lastAccessedTimestamp": "2025-05-12T00:18:12.641514Z"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "course_17",
+    "enrollmentDate": "2025-05-12T00:18:12.641531Z",
+    "overallProgress": 78,
+    "status": "completed",
+    "sections": [
+      {
+        "sectionId": "32a02acb-c0b6-430a-a0a9-331e11347063",
+        "chapters": [
+          {
+            "chapterId": "9d9cbbff-a387-47d7-9091-9a25355901e2",
+            "completed": true
+          },
+          {
+            "chapterId": "4cd271b1-099a-4e5a-9f23-e265ad47e1b2",
+            "completed": false
+          },
+          {
+            "chapterId": "cecbb0f1-3259-4ed1-b9fa-b69627ec6671",
             "completed": false
           }
         ]
       }
     ],
-    "lastAccessedTimestamp": "2023-03-10T14:30:00Z"
+    "lastAccessedTimestamp": "2025-05-12T00:18:12.642587Z"
   },
   {
-    "userId": "user_2ntu96pUCljUV2T9W0AThzjacQB",
-    "courseId": "8b4f7d9c-4b1c-4b1c-8b4f-7d9c8b4f7d9c",
-    "enrollmentDate": "2023-03-15T10:00:00Z",
-    "overallProgress": 0.25,
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "course_20",
+    "enrollmentDate": "2025-05-12T00:18:12.642599Z",
+    "overallProgress": 21,
+    "status": "in_progress",
     "sections": [
       {
-        "sectionId": "1a7b3c5d-9e2f-4g6h-8i0j-2k4l6m8n0p1q",
+        "sectionId": "3a1af81c-a12a-4316-adc9-ee6aebc40f5f",
         "chapters": [
           {
-            "chapterId": "c3d4e5f6-g7h8-i9j0-k1l2-m3n4o5p6q7r8",
+            "chapterId": "48b53dba-b304-474c-a8ba-6ab038a9063b",
             "completed": true
-          },
+          }
+        ]
+      }
+    ],
+    "lastAccessedTimestamp": "2025-05-12T00:18:12.642686Z"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "course_4",
+    "enrollmentDate": "2025-05-12T00:18:12.642693Z",
+    "overallProgress": 89,
+    "status": "completed",
+    "sections": [
+      {
+        "sectionId": "57eb5b17-db24-4df8-93d6-59958781013f",
+        "chapters": [
           {
-            "chapterId": "d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9",
+            "chapterId": "e3d70969-d55e-4afd-aff7-a6680d6c3d8c",
             "completed": false
           }
         ]
       }
     ],
-    "lastAccessedTimestamp": "2023-03-20T16:45:00Z"
+    "lastAccessedTimestamp": "2025-05-12T00:18:12.642719Z"
   },
   {
-    "userId": "user_3rTg67LmZnXc4Vb8Wd0JyUhEq",
-    "courseId": "c5d6e7f8-g9h0-i1j2-k3l4-m5n6o7p8q9r0",
-    "enrollmentDate": "2023-04-01T11:30:00Z",
-    "overallProgress": 0.5,
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "course_7",
+    "enrollmentDate": "2025-05-12T00:18:12.642722Z",
+    "overallProgress": 67,
+    "status": "in_progress",
     "sections": [
       {
-        "sectionId": "3e5f7g9h-1i3j-5k7l-9m1n-3o5p7q9r1s3t",
+        "sectionId": "d01f138e-3ad4-445b-87f2-99e3ade48eff",
         "chapters": [
           {
-            "chapterId": "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0",
+            "chapterId": "801c7161-c122-476b-af5d-53f099881d96",
+            "completed": false
+          },
+          {
+            "chapterId": "41ee15e3-7d1d-4534-bc0b-d1e1b928a3ab",
+            "completed": false
+          }
+        ]
+      },
+      {
+        "sectionId": "a7c0ee1d-a18f-46aa-ba45-84b9ddcc9f58",
+        "chapters": [
+          {
+            "chapterId": "00261f82-32f7-4b58-b3c1-36dd265f6cb9",
+            "completed": false
+          },
+          {
+            "chapterId": "7a30859c-7971-43f3-b43e-bf2c0af3e207",
+            "completed": true
+          }
+        ]
+      }
+    ],
+    "lastAccessedTimestamp": "2025-05-12T00:18:12.642990Z"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "course_5",
+    "enrollmentDate": "2025-05-12T00:18:12.642997Z",
+    "overallProgress": 32,
+    "status": "completed",
+    "sections": [
+      {
+        "sectionId": "d0a026a9-b7bd-4b80-94e6-1118a06cd5e2",
+        "chapters": [
+          {
+            "chapterId": "8431dc51-1a8d-408c-aefb-dfa75421d6c7",
+            "completed": false
+          },
+          {
+            "chapterId": "7481a07c-e224-40db-8c94-4e86da8bb899",
             "completed": true
           },
           {
-            "chapterId": "f6g7h8i9-j0k1-l2m3-n4o5-p6q7r8s9t0u1",
+            "chapterId": "2a081f13-17aa-47b7-a533-44ea6ec81942",
+            "completed": true
+          }
+        ]
+      }
+    ],
+    "lastAccessedTimestamp": "2025-05-12T00:18:12.643092Z"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "course_3",
+    "enrollmentDate": "2025-05-12T00:18:12.643104Z",
+    "overallProgress": 52,
+    "status": "completed",
+    "sections": [
+      {
+        "sectionId": "c4d98ba0-26ea-43f6-8fc0-8a735c6d78ff",
+        "chapters": [
+          {
+            "chapterId": "ced8e420-03dd-4b5d-af2f-5656b505ec59",
+            "completed": false
+          },
+          {
+            "chapterId": "09a19dc8-6bed-4f96-b1f7-6404f504b7e5",
+            "completed": false
+          }
+        ]
+      },
+      {
+        "sectionId": "c30b86e2-d94a-4463-99c2-b099155815db",
+        "chapters": [
+          {
+            "chapterId": "27053e99-a5b7-4740-b4ee-fc2b0fc1f553",
             "completed": true
           },
           {
-            "chapterId": "g7h8i9j0-k1l2-m3n4-o5p6-q7r8s9t0u1v2",
+            "chapterId": "94a9fe00-a846-4322-9e55-2ef435717fb3",
+            "completed": true
+          }
+        ]
+      }
+    ],
+    "lastAccessedTimestamp": "2025-05-12T00:18:12.643363Z"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "course_10",
+    "enrollmentDate": "2025-05-12T00:18:12.643374Z",
+    "overallProgress": 57,
+    "status": "in_progress",
+    "sections": [
+      {
+        "sectionId": "e6483759-fbb6-4064-88e1-1b21ad667864",
+        "chapters": [
+          {
+            "chapterId": "9ea462cd-eeb4-4349-89a5-74eba76e2c1f",
+            "completed": true
+          }
+        ]
+      },
+      {
+        "sectionId": "49e8982d-fca4-4880-aa3b-ab87b585c20c",
+        "chapters": [
+          {
+            "chapterId": "91f7c379-5f2d-4b3a-96f5-12e38c40eb1f",
+            "completed": false
+          },
+          {
+            "chapterId": "3d1beb0e-bc02-4bd0-8d70-55ceaa80535d",
+            "completed": false
+          },
+          {
+            "chapterId": "c4af6c92-6f1a-45c1-beba-7ce47d03d066",
+            "completed": true
+          }
+        ]
+      }
+    ],
+    "lastAccessedTimestamp": "2025-05-12T00:18:12.643715Z"
+  },
+  {
+    "userId": "user_2wuoFR6lfvzdCOVBcX5RLrv7oIN",
+    "courseId": "course_8",
+    "enrollmentDate": "2025-05-12T00:18:12.643727Z",
+    "overallProgress": 47,
+    "status": "in_progress",
+    "sections": [
+      {
+        "sectionId": "bda043c8-d21d-40fe-b35e-f44ce1c55c29",
+        "chapters": [
+          {
+            "chapterId": "9f94aa57-d838-49b5-af49-c768c0443a08",
+            "completed": true
+          }
+        ]
+      }
+    ],
+    "lastAccessedTimestamp": "2025-05-12T00:18:12.643782Z"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "course_20",
+    "enrollmentDate": "2025-05-12T00:18:12.643807Z",
+    "overallProgress": 2,
+    "status": "completed",
+    "sections": [
+      {
+        "sectionId": "576d8daa-7d73-4199-8248-bad6376e1d57",
+        "chapters": [
+          {
+            "chapterId": "cef75b38-7a4a-4b42-8971-b6f37ac80049",
             "completed": false
           }
         ]
       }
     ],
-    "lastAccessedTimestamp": "2023-04-10T09:15:00Z"
+    "lastAccessedTimestamp": "2025-05-12T00:18:12.643881Z"
   },
   {
-    "userId": "user_5vBn23WsLkMp7Jh4Gt8FxYcRz",
-    "courseId": "d4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9",
-    "enrollmentDate": "2023-04-05T14:00:00Z",
-    "overallProgress": 0.1,
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "course_12",
+    "enrollmentDate": "2025-05-12T00:18:12.643889Z",
+    "overallProgress": 98,
+    "status": "completed",
     "sections": [
       {
-        "sectionId": "4u6v8w0x-2y4z-6a8b-0c2d-4e6f8g0h2i4j",
+        "sectionId": "935ae6c9-401b-4413-a2b8-5b5135281528",
         "chapters": [
           {
-            "chapterId": "h8i9j0k1-l2m3-n4o5-p6q7-r8s9t0u1v2w3",
-            "completed": true
+            "chapterId": "cc044cbe-3ddc-49bb-a772-a352ea515c66",
+            "completed": false
+          }
+        ]
+      },
+      {
+        "sectionId": "14743cc7-b40e-40f5-9cf2-84934b1dfd7a",
+        "chapters": [
+          {
+            "chapterId": "78ae0859-1470-4ac9-9907-95130ef669ab",
+            "completed": false
           },
           {
-            "chapterId": "i9j0k1l2-m3n4-o5p6-q7r8-s9t0u1v2w3x4",
+            "chapterId": "9dd70084-6d40-4029-bbfb-8c3a1a10068c",
+            "completed": true
+          }
+        ]
+      }
+    ],
+    "lastAccessedTimestamp": "2025-05-12T00:18:12.643988Z"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "course_19",
+    "enrollmentDate": "2025-05-12T00:18:12.643998Z",
+    "overallProgress": 21,
+    "status": "completed",
+    "sections": [
+      {
+        "sectionId": "bf103ece-09f0-4a48-8e26-f9ada0dc7d0b",
+        "chapters": [
+          {
+            "chapterId": "013bba9d-016f-41d1-90db-194677e9ae74",
+            "completed": false
+          },
+          {
+            "chapterId": "03eec38e-cd86-443e-ab00-de056618c98f",
+            "completed": true
+          }
+        ]
+      },
+      {
+        "sectionId": "ff609265-fdf8-4d8c-a3d1-fa7af73e06ce",
+        "chapters": [
+          {
+            "chapterId": "ec534a74-fff1-4982-8c74-1ffc45ad4e1f",
+            "completed": false
+          },
+          {
+            "chapterId": "499620cf-4595-43b3-93df-649346a5f5d1",
+            "completed": false
+          },
+          {
+            "chapterId": "845a1f59-8014-4a20-9011-0bc7df1cd4c2",
+            "completed": true
+          }
+        ]
+      }
+    ],
+    "lastAccessedTimestamp": "2025-05-12T00:18:12.644146Z"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "course_6",
+    "enrollmentDate": "2025-05-12T00:18:12.644155Z",
+    "overallProgress": 1,
+    "status": "in_progress",
+    "sections": [
+      {
+        "sectionId": "c0a42e80-0c65-4b7f-8b46-27e7aeabd436",
+        "chapters": [
+          {
+            "chapterId": "87f346eb-a265-4a07-a4a2-7a65d9315381",
             "completed": false
           }
         ]
       }
     ],
-    "lastAccessedTimestamp": "2023-04-15T11:30:00Z"
+    "lastAccessedTimestamp": "2025-05-12T00:18:12.644216Z"
   },
   {
-    "userId": "user_8qPk34ZxCvBn1Mh6Jt9WsYdAe",
-    "courseId": "e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0",
-    "enrollmentDate": "2023-04-10T09:30:00Z",
-    "overallProgress": 0.8,
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "course_1",
+    "enrollmentDate": "2025-05-12T00:18:12.644224Z",
+    "overallProgress": 39,
+    "status": "completed",
     "sections": [
       {
-        "sectionId": "5k7l9m1n-3o5p-7q9r-1s3t-5u7v9w1x3y5z",
+        "sectionId": "dd4f7bf3-6182-4a78-8c2c-6029bd6965df",
         "chapters": [
           {
-            "chapterId": "j0k1l2m3-n4o5-p6q7-r8s9-t0u1v2w3x4y5",
+            "chapterId": "3950f9a5-d544-4cc7-ba1e-4f7b6ef1aaae",
             "completed": true
           },
           {
-            "chapterId": "k1l2m3n4-o5p6-q7r8-s9t0-u1v2w3x4y5z6",
-            "completed": true
+            "chapterId": "e9f35218-2828-4847-90b2-8e47b1a532ff",
+            "completed": false
           }
         ]
       }
     ],
-    "lastAccessedTimestamp": "2023-04-20T15:45:00Z"
+    "lastAccessedTimestamp": "2025-05-12T00:18:12.644311Z"
+  },
+  {
+    "userId": "user_2wupDL8kVVcFX81c8Jceym1tInO",
+    "courseId": "course_5",
+    "enrollmentDate": "2025-05-12T00:18:12.644319Z",
+    "overallProgress": 24,
+    "status": "completed",
+    "sections": [
+      {
+        "sectionId": "8f9ae31e-c89b-44d4-b2e8-9eedb53cc7c1",
+        "chapters": [
+          {
+            "chapterId": "e213f9c6-5a91-4aa9-bfb0-360e1c20e32f",
+            "completed": false
+          }
+        ]
+      }
+    ],
+    "lastAccessedTimestamp": "2025-05-12T00:18:12.644400Z"
   }
 ]
