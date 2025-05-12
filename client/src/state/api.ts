@@ -243,7 +243,7 @@ export const api = createApi({
         }
 
         return {
-          url: "api/student-progress",
+          url: "users/course-progress/all-progress",
           headers: {
             "x-user-type": userType as string,
           },

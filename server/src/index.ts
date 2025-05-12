@@ -46,14 +46,29 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 app.use(clerkMiddleware());
 
+// Handle OPTIONS preflight for all routes to resolve CORS at API Gateway layer
+app.options("*", (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, DELETE, OPTIONS"
+  );
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.status(200).send();
+});
+
 /* ROUTES */
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
+app.get("/api/health", (req, res) => {
+  res.status(200).json({ message: "Server is healthy" });
+});
+
 // Direct endpoint for progress tracking with custom authentication
 app.get(
-  "/api/student-progress",
+  "/users/course-progress/all-progress",
   clerkMiddleware(),
   (req, res, next) => {
     console.log("Student progress API endpoint accessed");
