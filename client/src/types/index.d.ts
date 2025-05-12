@@ -61,7 +61,6 @@ declare global {
       note: string;
       dueDate: string;
     };
-    
   }
 
   interface Transaction {
@@ -98,7 +97,6 @@ declare global {
     dueDate: date;
     status: string;
   }
-
 
   type CreateUserArgs = Omit<User, "userId">;
   type CreateCourseArgs = Omit<Course, "courseId">;

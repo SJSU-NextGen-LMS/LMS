@@ -7,7 +7,6 @@ import { getAuth } from "@clerk/express";
 
 dotenv.config();
 
-
 export const listAssignCourses = async (
   req: Request,
   res: Response
@@ -15,9 +14,10 @@ export const listAssignCourses = async (
   const { userId } = req.query;
 
   try {
-    const assignCourse = userId && userId !== "all"
-      ? await AssignCourse.query("userId").eq(userId).exec()
-      : await AssignCourse.scan().exec();
+    const assignCourse =
+      userId && userId !== "all"
+        ? await AssignCourse.query("userId").eq(userId).exec()
+        : await AssignCourse.scan().exec();
 
     res.json({
       message: "Assignment retrieved successfully",
@@ -48,11 +48,10 @@ export const getUserAssignCourse = async (
     });
   } catch (error) {
     res
-    .status(500)
-    .json({ message: "Error retrieving assigned courses", error });
+      .status(500)
+      .json({ message: "Error retrieving assigned courses", error });
   }
-  
-}
+};
 export const getUserAssignCourses = async (
   req: Request,
   res: Response
@@ -66,17 +65,17 @@ export const getUserAssignCourses = async (
   }
 
   try {
-    const assignedCourses = await AssignCourse.scan("userId")
-      .eq(userId)
-      .exec();
+    const assignedCourses = await AssignCourse.scan("userId").eq(userId).exec();
     const courseIds = assignedCourses.map((item: any) => item.courseId);
     let courses: any[] = [];
     if (courseIds.length > 0) {
       const fetchedCourses = await Course.batchGet(courseIds);
 
-    // Merge course data with assignedCourse data
+      // Merge course data with assignedCourse data
       courses = fetchedCourses.map((course: any) => {
-        const assignment = assignedCourses.find((a: any) => a.courseId === course.courseId);
+        const assignment = assignedCourses.find(
+          (a: any) => a.courseId === course.courseId
+        );
         return {
           ...course,
           assignment: {
@@ -103,7 +102,7 @@ export const createAssignCourse = async (
   res: Response
 ): Promise<void> => {
   const { userId, courseId, note, dueDate, managerId, managerName } = req.body;
-  
+
   try {
     //console.log(userId, courseId, note, dueDate);
 
@@ -124,8 +123,6 @@ export const createAssignCourse = async (
     });
     await newAssignCourse.save();
 
-    
-
     res.json({
       message: "Assign Course successfully",
       data: {
@@ -134,8 +131,6 @@ export const createAssignCourse = async (
     });
   } catch (error) {
     console.error("createAssignCourse error:", error);
-    res
-      .status(500)
-      .json({ message: "Error assigning", error });
+    res.status(500).json({ message: "Error assigning", error });
   }
 };

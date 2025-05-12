@@ -16,7 +16,7 @@ const customBaseQuery = async (
       if (token) {
         headers.set("Authorization", `Bearer ${token}`);
       }
-      return headers; 
+      return headers;
     },
   });
 
@@ -61,7 +61,7 @@ const customBaseQuery = async (
 export const api = createApi({
   baseQuery: customBaseQuery,
   reducerPath: "api",
-  tagTypes: ["Courses", "Users", "UserCourseProgress","UserEnrolledCourses"],
+  tagTypes: ["Courses", "Users", "UserCourseProgress", "UserEnrolledCourses"],
   endpoints: (build) => ({
     /* 
     ===============
@@ -82,7 +82,6 @@ export const api = createApi({
         url: "users/clerk",
       }),
     }),
-    
 
     /* 
     ===============
@@ -167,14 +166,13 @@ export const api = createApi({
       query: (userId) => `transactions?userId=${userId}`,
     }),
 
-
     createTransaction: build.mutation<Transaction, Partial<Transaction>>({
       query: (transaction) => ({
         url: "transactions",
         method: "POST",
         body: transaction,
       }),
-      invalidatesTags:["UserEnrolledCourses"],
+      invalidatesTags: ["UserEnrolledCourses"],
     }),
 
     /*
@@ -187,7 +185,10 @@ export const api = createApi({
       query: (userId) => `assignCourse/${userId}`,
     }),
 
-    getUserAssignCourse: build.query<AssignCourse, { userId: string; courseId: string }>({
+    getUserAssignCourse: build.query<
+      AssignCourse,
+      { userId: string; courseId: string }
+    >({
       query: ({ userId, courseId }) => `assignCourse/${userId}/${courseId}`,
     }),
 

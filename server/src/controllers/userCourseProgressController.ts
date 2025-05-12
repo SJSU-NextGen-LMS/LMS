@@ -79,7 +79,7 @@ export const updateUserCourseProgress = async (
         courseId,
         enrollmentDate: new Date().toISOString(),
         overallProgress: 0,
-        status: 'in_progress',
+        status: "in_progress",
         sections: progressData.sections || [],
         lastAccessedTimestamp: new Date().toISOString(),
       });
@@ -91,17 +91,17 @@ export const updateUserCourseProgress = async (
       );
       progress.lastAccessedTimestamp = new Date().toISOString();
       progress.overallProgress = calculateOverallProgress(progress.sections);
-      
+
       // Update status if progress is 100%
       if (progress.overallProgress === 100) {
-        progress.status = 'completed';
+        progress.status = "completed";
         let assignCourse = await AssignCourse.get({ userId, courseId });
         if (assignCourse) {
-          assignCourse.status = 'Completed';
+          assignCourse.status = "Completed";
           await assignCourse.save();
         }
       } else {
-        progress.status = 'in_progress';
+        progress.status = "in_progress";
       }
     }
 
@@ -115,6 +115,78 @@ export const updateUserCourseProgress = async (
     console.error("Error updating progress:", error);
     res.status(500).json({
       message: "Error updating user course progress",
+      error,
+    });
+  }
+};
+
+export const getAllStudentsProgress = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  const auth = getAuth(req);
+
+  if (!auth) {
+    res.status(403).json({ message: "Access denied" });
+    return;
+  }
+
+  const { userId } = auth;
+  const userType = req.headers["x-user-type"];
+
+  // Debug info to help troubleshoot
+  console.log("getAllStudentsProgress called");
+  console.log("User type:", userType);
+  console.log("Auth user ID:", userId);
+
+  // Check if user is a manager or admin
+  if (userType !== "manager" && userType !== "admin") {
+    res
+      .status(403)
+      .json({ message: "Access denied. Manager or admin role required." });
+    return;
+  }
+
+  try {
+    // Get all progress records
+    const allProgressRecords = await UserCourseProgress.scan().exec();
+    console.log(`Found ${allProgressRecords.length} progress records`);
+
+    // Get unique course IDs from progress records
+    const courseIds = [
+      ...new Set(allProgressRecords.map((record: any) => record.courseId)),
+    ];
+    console.log(`Found ${courseIds.length} unique courses`);
+
+    // Get course details for all courses
+    const courses =
+      courseIds.length > 0 ? await Course.batchGet(courseIds) : [];
+    const coursesMap = courses.reduce((map: any, course: any) => {
+      map[course.courseId] = course;
+      return map;
+    }, {});
+
+    // Format the response data
+    const formattedData = allProgressRecords.map((record: any) => ({
+      userId: record.userId,
+      courseId: record.courseId,
+      courseName: coursesMap[record.courseId]?.title || "Unknown Course",
+      enrollmentDate: record.enrollmentDate,
+      overallProgress: record.overallProgress,
+      status: record.status,
+      lastAccessed: record.lastAccessedTimestamp,
+    }));
+
+    // Ensure we're sending a proper JSON response
+    res.setHeader("Content-Type", "application/json");
+    res.json({
+      message: "Student progress data retrieved successfully",
+      data: formattedData,
+    });
+  } catch (error) {
+    console.error("Error retrieving student progress:", error);
+    res.status(500).json({
+      message: "Error retrieving student progress data",
       error,
     });
   }

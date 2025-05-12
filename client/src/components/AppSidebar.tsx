@@ -22,6 +22,7 @@ import {
   User,
   Users,
   SquareLibrary,
+  BarChart,
 } from "lucide-react";
 import Loading from "./Loading";
 import Image from "next/image";
@@ -53,16 +54,18 @@ const AppSidebar = () => {
     manager: [
       { icon: Search, label: "Search ", href: "/search" },
       { icon: BookPlus, label: "Assign", href: "/manager/assign" },
+      { icon: BarChart, label: "Student Progress", href: "/manager/progress" },
       { icon: SquareLibrary, label: "Your Courses", href: "/teacher/courses" },
       { icon: BookOpen, label: "Enrolled", href: "/user/courses" },
       { icon: ListTodo, label: "Assigned", href: "/user/assigned" },
       { icon: User, label: "Profile", href: "/user/profile" },
       { icon: Settings, label: "Settings", href: "/user/settings" },
     ],
-    admin: [ 
+    admin: [
       { icon: Search, label: "Search ", href: "/search" },
       { icon: Users, label: "Roles", href: "/admin/roles" },
       { icon: BookPlus, label: "Assign", href: "/manager/assign" },
+      { icon: BarChart, label: "Student Progress", href: "/manager/progress" },
       { icon: SquareLibrary, label: "Your Courses", href: "/teacher/courses" },
       { icon: BookOpen, label: "Enrolled", href: "/user/courses" },
       { icon: ListTodo, label: "Assigned", href: "/user/assigned" },
@@ -75,7 +78,11 @@ const AppSidebar = () => {
   if (!user) return <div>User not found</div>;
 
   const userType =
-    (user.publicMetadata.userType as "student" | "teacher" | "manager" | "admin") || "student";
+    (user.publicMetadata.userType as
+      | "student"
+      | "teacher"
+      | "manager"
+      | "admin") || "student";
   const currentNavLinks = navLinks[userType];
 
   return (
