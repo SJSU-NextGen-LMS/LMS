@@ -72,7 +72,6 @@ const StudentProgressPage = () => {
         console.log("Requesting from URL:", apiUrl);
 
         // Explicitly get the authentication token using Clerk's client-side API
-        // @ts-ignore - Clerk types may not be fully compatible
         const token = await window.Clerk?.session?.getToken();
 
         console.log("Auth token available:", !!token);
