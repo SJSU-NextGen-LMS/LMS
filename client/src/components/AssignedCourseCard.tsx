@@ -19,8 +19,9 @@ import {
 import { useUser } from "@clerk/nextjs";
 import { message } from "antd";
 import { v4 as uuidv4 } from "uuid";
-import { CheckCircle, BookOpen } from "lucide-react";
+import { CheckCircle, BookOpen, Clock, User } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { format } from "date-fns";
 
 interface AssignedCourseCardProps {
   course: Course;
@@ -73,7 +74,6 @@ const AssignedCourseCard = ({
       message.error("You must be logged in to enroll");
       return;
     }
-    
 
     if (isEnrolled) {
       // If already enrolled, just navigate to the course
@@ -147,6 +147,11 @@ const AssignedCourseCard = ({
     }
   };
 
+  // Format the due date if it exists
+  const formattedDueDate = course.assignment?.dueDate
+    ? format(new Date(course.assignment.dueDate), "MMM dd, yyyy")
+    : "No due date";
+
   return (
     <Card className="course-card group">
       <CardHeader
@@ -173,7 +178,13 @@ const AssignedCourseCard = ({
           <span
             className={cn(
               "text-xs font-semibold px-2 py-1 rounded-full",
-              getStatusColor(isEnrolled ? isCompleted ? "Completed" : "Enrolled" : "Assigned")
+              getStatusColor(
+                isEnrolled
+                  ? isCompleted
+                    ? "Completed"
+                    : "Enrolled"
+                  : "Assigned"
+              )
             )}
           >
             {isCompleted ? "Completed" : isEnrolled ? "Enrolled" : "Assigned"}
@@ -191,6 +202,25 @@ const AssignedCourseCard = ({
           <p className="text-sm text-customgreys-dirtyGrey">
             {course.teacherName}
           </p>
+        </div>
+
+        {/* Assignment information */}
+        <div className="border border-customgreys-dirtyGrey rounded-md p-2 my-3 bg-customgreys-secondarybg">
+          <div className="flex items-center gap-2 mb-1">
+            <User size={16} className="text-primary-700" />
+            <p className="text-sm text-white-100">
+              Assigned by:{" "}
+              <span className="font-semibold">
+                {assignCourse?.managerName || "Manager"}
+              </span>
+            </p>
+          </div>
+          <div className="flex items-center gap-2">
+            <Clock size={16} className="text-primary-700" />
+            <p className="text-sm text-white-100">
+              Due: <span className="font-semibold">{formattedDueDate}</span>
+            </p>
+          </div>
         </div>
 
         {course.description && (
