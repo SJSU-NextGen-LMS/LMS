@@ -49,7 +49,7 @@ export const getTeacherCourses = async (
   const auth = getAuth(req);
 
   if (!auth || auth.userId !== userId) {
-    res.status(403).json({ message: "Access denied" });
+    res.status(403).json({ message: "get teacher courses Access denied" });
     return;
   }
 

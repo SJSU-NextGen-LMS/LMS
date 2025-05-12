@@ -151,13 +151,14 @@ const CourseEditor = () => {
                   type="select"
                   placeholder="Select category here"
                   options={[
-                    { value: "Technology", label: "Technology" },
-                    { value: "Science", label: "Science" },
-                    { value: "Mathematics", label: "Mathematics" },
-                    {
-                      value: "Artificial Intelligence",
-                      label: "Artificial Intelligence",
-                    },
+                    { value: "Architecture Walkthrough", label: "Architecture Walkthrough" },
+                    { value: "Corporate Success", label: "Corporate Success" },
+                    { value: "Engineering Onboardinga", label: "Engineering Onboardinga" },
+                    { value: "Internal Tools", label: "Internal Tools"},
+                    { value: "Product Management", label: "Product Management"},
+                    { value: "Sales", label: "Sales"},
+                    { value: "Software Engineering", label: "Software Engineering"},
+                    { value: "UX/UI Design", label: "UX/UI Design"},
                   ]}
                   initialValue={course?.category}
                 />

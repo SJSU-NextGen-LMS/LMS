@@ -14,7 +14,7 @@ export const getUserEnrolledCourses = async (
   const auth = getAuth(req);
 
   if (!auth || auth.userId !== userId) {
-    res.status(403).json({ message: "Access denied" });
+    res.status(403).json({ message: "get user enrolled courses Access denied" });
     return;
   }
 
@@ -127,7 +127,7 @@ export const getAllStudentsProgress = async (
   const auth = getAuth(req);
 
   if (!auth) {
-    res.status(403).json({ message: "Access denied" });
+    res.status(403).json({ message: "get all students progress Access denied" });
     return;
   }
 

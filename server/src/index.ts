@@ -81,8 +81,8 @@ app.get("/api/health", (req, res) => {
 });
 
 // Direct endpoint for progress tracking with custom authentication
-app.get(
-  "/users/course-progress/all-progress",
+/*app.get(
+  "/api/users/course-progress/all-progress",
   clerkMiddleware(),
   (req, res, next) => {
     // Set CORS headers for this specific endpoint
@@ -134,7 +134,7 @@ app.get(
     next();
   },
   getAllStudentsProgress
-);
+);*/
 
 app.use("/courses", requireAuth(), courseRoutes);
 app.use("/users/clerk", requireAuth(), userClerkRoutes);

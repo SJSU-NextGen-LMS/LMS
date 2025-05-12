@@ -28,6 +28,7 @@ export const listAssignCourses = async (
   }
 };
 
+
 export const getUserAssignCourse = async (
   req: Request,
   res: Response
@@ -36,7 +37,7 @@ export const getUserAssignCourse = async (
   const auth = getAuth(req);
 
   if (!auth || auth.userId !== userId) {
-    res.status(403).json({ message: "Access denied" });
+    res.status(403).json({ message: "get user assigned course Access denied" });
     return;
   }
 
@@ -52,6 +53,7 @@ export const getUserAssignCourse = async (
       .json({ message: "Error retrieving assigned courses", error });
   }
 };
+
 export const getUserAssignCourses = async (
   req: Request,
   res: Response
@@ -60,7 +62,7 @@ export const getUserAssignCourses = async (
   const auth = getAuth(req);
 
   if (!auth || auth.userId !== userId) {
-    res.status(403).json({ message: "Access denied" });
+    res.status(403).json({ message: "get user assigned courses Access denied" });
     return;
   }
 
@@ -96,6 +98,52 @@ export const getUserAssignCourses = async (
       .json({ message: "Error retrieving assigned courses", error });
   }
 };
+
+export const getManagerAssignedCourses = async (
+  req: Request,
+  res: Response
+): Promise<void> => {
+  const { userId } = req.params;
+  const auth = getAuth(req);
+
+  if (!auth || auth.userId !== userId) {
+    res.status(403).json({ message: "get manager assigned courses Access denied." });
+    return;
+  }
+  
+
+  try {
+    // Step 1: Get all assigned courses for this manager
+    const assignedCourses = await AssignCourse.scan("managerId").eq(userId).exec();
+  
+    // Step 2: For each assigned course, fetch its progress
+    const results = await Promise.all(
+      assignedCourses.map(async (assignment: any) => {
+        const course = await Course.get(assignment.courseId);
+        const progress = await UserCourseProgress.get({
+          userId: assignment.userId,
+          courseId: assignment.courseId,
+        });
+  
+        return {
+          ...assignment,
+          progress: progress || null,
+          courseName: course.title || null,
+        };
+      })
+    );
+  
+    res.json({
+      message: "Assigned courses with progress retrieved successfully",
+      data: results,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Error retrieving assignments with progress",
+      error,
+    });
+  }
+}
 
 export const createAssignCourse = async (
   req: Request,

@@ -13,6 +13,26 @@ export interface StudentProgress {
   overallProgress: number;
   status: string;
   lastAccessed: string;
+  managerName?: string;
+}
+
+export interface ManagerAssignedCourses {
+  userId: string;
+  courseId: string;
+  courseName: string;
+  userName: string;
+  dueDate: string;
+  enrollmentDate: string;
+  overallProgress: number;
+  status: string;
+  lastAccessed: string;
+  managerName?: string;
+  progress: {
+    status: string;
+    overallProgress: number;
+    enrollmentDate: string;
+    lastAccessed: string;
+  };
 }
 
 const customBaseQuery = async (
@@ -41,6 +61,9 @@ const customBaseQuery = async (
         result.error.status.toString() ||
         "An error occurred";
       toast.error(`Error: ${errorMessage}`);
+      console.log(errorMessage);
+      console.log(errorData?.message);
+      console.log(result.error);
     }
 
     const isMutationRequest =
@@ -72,7 +95,7 @@ const customBaseQuery = async (
 export const api = createApi({
   baseQuery: customBaseQuery,
   reducerPath: "api",
-  tagTypes: ["Courses", "Users", "UserCourseProgress", "UserEnrolledCourses"],
+  tagTypes: ["Courses", "Users", "UserCourseProgress", "UserEnrolledCourses", "AssignCourses", "StudentProgress"],
   endpoints: (build) => ({
     /* 
     ===============
@@ -92,6 +115,7 @@ export const api = createApi({
       query: () => ({
         url: "users/clerk",
       }),
+      providesTags: ["Users"],
     }),
 
     /* 
@@ -176,7 +200,7 @@ export const api = createApi({
     getTransactions: build.query<Transaction[], string>({
       query: (userId) => `transactions?userId=${userId}`,
     }),
-
+    
     createTransaction: build.mutation<Transaction, Partial<Transaction>>({
       query: (transaction) => ({
         url: "transactions",
@@ -194,6 +218,7 @@ export const api = createApi({
 
     getAssignCourses: build.query<Course[], string>({
       query: (userId) => `assignCourse/${userId}`,
+      providesTags: ["AssignCourses"],
     }),
 
     getUserAssignCourse: build.query<
@@ -201,6 +226,7 @@ export const api = createApi({
       { userId: string; courseId: string }
     >({
       query: ({ userId, courseId }) => `assignCourse/${userId}/${courseId}`,
+      providesTags: ["AssignCourses"],
     }),
 
     createAssignCourse: build.mutation<AssignCourse, Partial<AssignCourse>>({
@@ -209,6 +235,12 @@ export const api = createApi({
         method: "POST",
         body: assignCourse,
       }),
+      invalidatesTags: ["AssignCourses", "StudentProgress"],
+    }),
+
+    getManagerAssignedCourses: build.query<ManagerAssignedCourses[], string>({
+      query: (userId) => `assignCourse/manager/${userId}`,
+      providesTags: ["StudentProgress"],
     }),
 
     /* 
@@ -230,9 +262,27 @@ export const api = createApi({
         `users/course-progress/${userId}/courses/${courseId}`,
       providesTags: ["UserCourseProgress"],
     }),
-
+    
     getAllStudentsProgress: build.query<StudentProgress[], void>({
+      query: () => ({
+        url: "users/course-progress/all-progress",
+      }),
+      providesTags: ["StudentProgress"],
+    }),
+
+/*
+    getAllStudentsProgress: build.query<StudentProgress[], void>({
+        query: ({ category }) => ({
+          url: "courses",
+          params: { category },
+        }),
+        providesTags: ["Courses"],
+      }),
+  
+      
       query: () => {
+
+        /
         // Get user type from window.Clerk if available
         let userType = "unknown";
         try {
@@ -242,19 +292,14 @@ export const api = createApi({
           console.error("Error accessing user type:", e);
         }
 
-        // In production, add mode 'cors' explicitly to ensure proper CORS handling
-        const isProduction = process.env.NODE_ENV === "production";
-
         return {
           url: "users/course-progress/all-progress",
           headers: {
             "x-user-type": userType as string,
           },
-          // In production, ensure proper CORS handling
-          credentials: isProduction ? "omit" : "include",
         };
       },
-    }),
+    }),*/
 
     updateUserCourseProgress: build.mutation<
       UserCourseProgress,
@@ -271,7 +316,7 @@ export const api = createApi({
         method: "PUT",
         body: progressData,
       }),
-      invalidatesTags: ["UserCourseProgress"],
+      invalidatesTags: ["UserCourseProgress", "StudentProgress", "AssignCourses"],
       async onQueryStarted(
         { userId, courseId, progressData },
         { dispatch, queryFulfilled }
@@ -317,4 +362,5 @@ export const {
   useUpdateUserCourseProgressMutation,
   useGetAllStudentsProgressQuery,
   useGetTeacherCoursesQuery,
+  useGetManagerAssignedCoursesQuery,
 } = api;

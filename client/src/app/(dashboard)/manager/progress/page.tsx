@@ -37,69 +37,76 @@ import {
 } from "@/components/ui/select";
 import Loading from "@/components/Loading";
 import { Progress } from "@/components/ui/progress";
-import { useGetAllStudentsProgressQuery } from "@/state/api";
+import { useGetAllStudentsProgressQuery, useGetUsersQuery, useGetManagerAssignedCoursesQuery} from "@/state/api";
 import { StudentProgress } from "@/state/api";
 
 const StudentProgressPage = () => {
   const { user, isLoaded } = useUser();
-  const [filteredProgress, setFilteredProgress] = useState<StudentProgress[]>(
-    []
-  );
   const [searchTerm, setSearchTerm] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
 
   // Use RTK Query hook
-  const {
-    data: studentProgress = [],
+  
+  const { 
+    data: managerAssignedCourses = [],
     isLoading,
     error,
-  } = useGetAllStudentsProgressQuery();
+    } = useGetManagerAssignedCoursesQuery(user?.id ?? "");
 
-  // Use memoization to prevent unnecessary re-renders
-  const filteredData = useMemo(() => {
-    if (!studentProgress || studentProgress.length === 0) {
+  // Add the users query
+  const { data: users = [] } = useGetUsersQuery();
+
+  // Create a mapping of user IDs to their full names
+  const userMap = useMemo(() => {
+    return users.reduce((acc: { [key: string]: string }, user) => {
+      acc[user.id] = `${user.firstName} ${user.lastName}`.trim();
+      return acc;
+    }, {});
+  }, [users]);
+
+  // Calculate filtered data directly without separate state
+  const filteredProgress = useMemo(() => {
+    console.log(managerAssignedCourses);
+    if (!managerAssignedCourses || managerAssignedCourses.length === 0) {
       return [];
     }
 
-    // Apply filters
-    let filtered = [...studentProgress];
+    let filtered = [...managerAssignedCourses];
 
-    // Search filter
     if (searchTerm) {
       filtered = filtered.filter(
         (item) =>
           item.courseName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          item.userId.toLowerCase().includes(searchTerm.toLowerCase())
+          item.userId.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          userMap[item.userId]?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          item.managerName?.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
 
-    // Status filter
     if (statusFilter !== "all") {
       filtered = filtered.filter((item) => item.status === statusFilter);
     }
 
     return filtered;
-  }, [searchTerm, statusFilter, studentProgress]);
-
-  // Update filtered progress when filtered data changes
-  useEffect(() => {
-    setFilteredProgress(filteredData);
-  }, [filteredData]);
+  }, [searchTerm, statusFilter, userMap, managerAssignedCourses]);
 
   // Calculate statistics
-  const completedCount =
-    studentProgress?.filter((item) => item.status === "completed").length || 0;
+  const completedCount = useMemo(() => 
+    managerAssignedCourses?.filter((item) => item.status === "completed").length || 0,
+    [managerAssignedCourses]
+  );
 
-  const inProgressCount =
-    studentProgress?.filter((item) => item.status === "in_progress").length ||
-    0;
+  const inProgressCount = useMemo(() => 
+    managerAssignedCourses?.filter((item) => item.status === "in_progress").length || 0,
+    [managerAssignedCourses]
+  );
 
-  const totalCourses = studentProgress
-    ? new Set(studentProgress.map((item) => item.courseId)).size
+  const totalCourses = managerAssignedCourses
+    ? new Set(managerAssignedCourses.map((item) => item.courseId)).size
     : 0;
 
-  const totalStudents = studentProgress
-    ? new Set(studentProgress.map((item) => item.userId)).size
+  const totalStudents = managerAssignedCourses
+    ? new Set(managerAssignedCourses.map((item) => item.userId)).size
     : 0;
 
   const formatDate = (dateString: string) => {
@@ -198,7 +205,7 @@ const StudentProgressPage = () => {
             <div className="relative flex-1">
               <Search className="absolute left-2 top-3 h-4 w-4 text-muted-foreground" />
               <Input
-                placeholder="Search by course or student ID..."
+                placeholder="Search by course, student name, manager name or ID..."
                 className="pl-8"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -223,8 +230,10 @@ const StudentProgressPage = () => {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Student ID</TableHead>
+                <TableHead>Student Name</TableHead>
                 <TableHead>Course</TableHead>
+                <TableHead>Manager</TableHead>
+                <TableHead>Due Date</TableHead>
                 <TableHead>Enrollment Date</TableHead>
                 <TableHead>Progress</TableHead>
                 <TableHead>Status</TableHead>
@@ -238,40 +247,54 @@ const StudentProgressPage = () => {
                     key={`${progress.userId}-${progress.courseId}-${index}`}
                   >
                     <TableCell className="font-medium">
-                      {progress.userId}
+                      {userMap[progress?.userId] || progress?.userId}
                     </TableCell>
-                    <TableCell>{progress.courseName}</TableCell>
-                    <TableCell>{formatDate(progress.enrollmentDate)}</TableCell>
+                    <TableCell>{progress?.courseName}</TableCell>
+                    <TableCell>{progress?.managerName || "Not Assigned"}</TableCell>
+                    <TableCell>{formatDate(progress?.dueDate)}</TableCell>
+                    <TableCell>
+                      {progress?.progress
+                        ? formatDate(progress.progress.enrollmentDate)
+                        : "Not Enrolled"}
+                    </TableCell>
                     <TableCell>
                       <div className="flex items-center gap-2">
                         <Progress
-                          value={progress.overallProgress}
+                          value={progress?.progress?.overallProgress}
                           className="h-2 w-full"
                         />
                         <span className="text-sm">
-                          {progress.overallProgress}%
+                          {progress?.progress?.overallProgress}%
                         </span>
                       </div>
                     </TableCell>
                     <TableCell>
                       <Badge
                         variant={
-                          progress.status === "completed"
+                          progress?.progress?.status === "completed"
                             ? "success"
-                            : "default"
+                            : progress?.progress?.status === "in_progress"
+                            ? "inProgress"
+                            : "notEnrolled"
                         }
                       >
-                        {progress.status === "completed"
+                        {progress?.progress?.status === "completed"
                           ? "Completed"
-                          : "In Progress"}
+                          : progress?.progress?.status === "in_progress"
+                          ? "In Progress"
+                          : "Not Enrolled"}
                       </Badge>
                     </TableCell>
-                    <TableCell>{formatDate(progress.lastAccessed)}</TableCell>
+                    <TableCell>
+                      {progress?.progress?.lastAccessed
+                        ? formatDate(progress.progress.lastAccessed)
+                        : "No activity"}
+                    </TableCell>
                   </TableRow>
                 ))
               ) : (
                 <TableRow>
-                  <TableCell colSpan={6} className="text-center">
+                  <TableCell colSpan={8} className="text-center">
                     No student progress data found
                   </TableCell>
                 </TableRow>

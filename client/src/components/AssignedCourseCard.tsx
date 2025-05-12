@@ -158,14 +158,6 @@ const AssignedCourseCard = ({
         className="course-card__header"
         onClick={() => onGoToCourse(course)}
       >
-        <Image
-          src={course.image || "/placeholder.png"}
-          alt={course.title}
-          width={400}
-          height={350}
-          className="course-card__image"
-          priority
-        />
       </CardHeader>
       <CardContent className="course-card__content">
         <div className="flex justify-between items-start mb-2">

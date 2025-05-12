@@ -16,7 +16,7 @@ export function useFilteredCourses(
 
       const matchesCategory =
         selectedCategory === "all" ||
-        course.category.toLowerCase().replace(/\s+/g, '-') === selectedCategory.toLowerCase().replace(/\s+/g, '');
+        course.category.toLowerCase().replace(/\s+/g, '-') === selectedCategory.toLowerCase().replace(/\s+/g, '-');
 
       return matchesSearch && matchesCategory;
     });

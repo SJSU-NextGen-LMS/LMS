@@ -4,12 +4,14 @@ import {
   getUserAssignCourses,
   createAssignCourse,
   getUserAssignCourse,
+  getManagerAssignedCourses,
 } from "../controllers/assignCourseController";
 
 const router = express.Router();
 
-router.get("/:userId", getUserAssignCourses);
 router.post("/", requireAuth(), createAssignCourse);
+router.get("/:userId", getUserAssignCourses);
+router.get("/manager/:userId", getManagerAssignedCourses);
 router.get("/:userId/:courseId", getUserAssignCourse);
 
 export default router;
