@@ -92,17 +92,17 @@ const StudentProgressPage = () => {
 
   // Calculate statistics
   const completedCount = useMemo(() => 
-    managerAssignedCourses?.filter((item) => item.status === "completed").length || 0,
+    managerAssignedCourses?.filter((item) => item.progress?.status === "completed").length || 0,
     [managerAssignedCourses]
   );
 
   const inProgressCount = useMemo(() => 
-    managerAssignedCourses?.filter((item) => item.status === "in_progress").length || 0,
+    managerAssignedCourses?.filter((item) => item.progress?.status === "in_progress").length || 0,
     [managerAssignedCourses]
   );
 
   const totalCourses = managerAssignedCourses
-    ? new Set(managerAssignedCourses.map((item) => item.courseId)).size
+    ? new Set(managerAssignedCourses.map((item) => item)).size
     : 0;
 
   const totalStudents = managerAssignedCourses

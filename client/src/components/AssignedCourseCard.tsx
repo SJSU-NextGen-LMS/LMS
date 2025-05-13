@@ -5,6 +5,7 @@ import {
   CardTitle,
   CardFooter,
 } from "@/components/ui/card";
+import { Notebook } from "lucide-react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -25,6 +26,7 @@ import { format } from "date-fns";
 
 interface AssignedCourseCardProps {
   course: Course;
+  notes: string;
   onGoToCourse: (course: Course) => void;
 }
 
@@ -195,6 +197,11 @@ const AssignedCourseCard = ({
             {course.teacherName}
           </p>
         </div>
+        {course.description && (
+          <p className="text-sm text-customgreys-dirtyGrey line-clamp-2 mb-3">
+            {course.description}
+          </p>
+        )}
 
         {/* Assignment information */}
         <div className="border border-customgreys-dirtyGrey rounded-md p-2 my-3 bg-customgreys-secondarybg">
@@ -213,13 +220,15 @@ const AssignedCourseCard = ({
               Due: <span className="font-semibold">{formattedDueDate}</span>
             </p>
           </div>
+          <div className="flex items-center gap-2">
+            <Notebook size={16} className="text-primary-700" />
+            <p className="text-sm text-white-100">
+              Notes: <span className="font-semibold">{assignCourse?.note}</span>
+            </p>
+          </div>
         </div>
 
-        {course.description && (
-          <p className="text-sm text-customgreys-dirtyGrey line-clamp-2 mb-3">
-            {course.description}
-          </p>
-        )}
+        
 
         <Button
           onClick={handleEnroll}

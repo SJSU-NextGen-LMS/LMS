@@ -120,6 +120,7 @@ const AdminPage = () => {
               color: "#fff",
               border: "1px solid #444",
             }}
+            className="text-white-100 placeholder:text-gray-400"
           />
         </div>
         
