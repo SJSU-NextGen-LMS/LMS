@@ -26,7 +26,6 @@ import { format } from "date-fns";
 
 interface AssignedCourseCardProps {
   course: Course;
-  notes: string;
   onGoToCourse: (course: Course) => void;
 }
 
