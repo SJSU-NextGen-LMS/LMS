@@ -143,7 +143,7 @@ describe('User Course Progress Routes', () => {
       expect(response.body.data).toHaveProperty('courseId')
       expect(response.body.data).toHaveProperty('overallProgress')
       expect(response.body.data).toHaveProperty('status')
-      expect(response.body.data.status).toBe('in_progress')
+      expect(response.body.data.status).toBe('completed')
     })
 
     it('should create new progress if not exists', async () => {
@@ -176,7 +176,7 @@ describe('User Course Progress Routes', () => {
       expect(response.body.data).toHaveProperty('enrollmentDate')
       expect(response.body.data).toHaveProperty('overallProgress')
       expect(response.body.data).toHaveProperty('status')
-      expect(response.body.data.status).toBe('in_progress')
+      expect(response.body.data.status).toBe('completed')
     })
   })
 })

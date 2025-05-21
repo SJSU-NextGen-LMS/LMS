@@ -152,7 +152,7 @@ export const createAssignCourse = async (
   const { userId, courseId, note, dueDate, managerId, managerName } = req.body;
 
   try {
-    //console.log(userId, courseId, note, dueDate);
+    console.log(userId, courseId, note, dueDate, managerId, managerName);
 
     const parsedDueDate = new Date(dueDate);
     if (isNaN(parsedDueDate.getTime())) {
@@ -170,6 +170,7 @@ export const createAssignCourse = async (
       status: "Assigned",
     });
     await newAssignCourse.save();
+    console.log("newAssignCourse: ", newAssignCourse);
 
     res.json({
       message: "Assign Course successfully",

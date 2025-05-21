@@ -17,10 +17,6 @@ jest.mock('@clerk/express', () => ({
   getAuth: () => ({ userId: 'test-user-id' })
 }));
 
-// Mock Dynamoose models
-jest.mock('../../../server/src/models/courseModel');
-jest.mock('../../../server/src/models/assignCourseModel');
-jest.mock('../../../server/src/models/userCourseProgressModel');
 
 describe('Assign Course Routes', () => {
   let app: Application;
